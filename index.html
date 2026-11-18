@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="utf-8" data-keep>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" data-keep>
+<meta name="color-scheme" content="light" data-keep>
+<meta name="theme-color" content="#0f172a" data-keep>
+<title data-keep>Tréningový plán (16. 11. 2026 – 3. 1. 2027)</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏃</text></svg>" data-keep>
+<script src="https://cdn.tailwindcss.com" data-keep></script>
+<style data-keep>
+  html { -webkit-text-size-adjust: 100%; }
+  body { -webkit-tap-highlight-color: transparent; }
+  button, label, summary, input[type="checkbox"] { touch-action: manipulation; }
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  details[open] .chev { transform: rotate(180deg); }
+  .chev { transition: transform .2s ease; }
+  .desc { white-space: pre-line; }
+  .day-card { scroll-margin-top: 5rem; outline: 4px solid rgba(14,165,233,0); outline-offset: 3px; transition: opacity .25s ease, filter .25s ease; }
+  .day-card.is-done { opacity: .58; filter: saturate(.55); }
+  .day-card.is-done .day-title { text-decoration: line-through; text-decoration-thickness: 2px; text-decoration-color: rgba(100,116,139,.55); }
+  @keyframes flash { 0%, 100% { outline-color: rgba(14,165,233,0); } 35% { outline-color: rgba(14,165,233,.6); } }
+  .flash { animation: flash 1.1s ease-in-out 2; }
+  @keyframes sheetIn { from { transform: translateY(28px); opacity: 0; } to { transform: none; opacity: 1; } }
+  .sheet-in { animation: sheetIn .22s ease-out; }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  .fade-in { animation: fadeIn .18s ease-out; }
+  @keyframes toastIn { from { transform: translateY(16px); opacity: 0; } to { transform: none; opacity: 1; } }
+  .toast-in { animation: toastIn .2s ease-out; }
+  .safe-bottom { padding-bottom: calc(1rem + env(safe-area-inset-bottom)); }
+</style>
+</head>
+<body class="min-h-screen bg-slate-100 text-slate-800 antialiased">
+<noscript data-keep><p style="padding:16px;font-family:sans-serif">Tréningový plán potrebuje zapnutý JavaScript.</p></noscript>
+<div id="app" data-keep data-clear></div>
+<div id="modal-root" data-keep data-clear></div>
+<div id="toast-root" data-keep data-clear class="pointer-events-none fixed inset-x-0 bottom-0 z-[60] flex flex-col items-center gap-2 px-4 safe-bottom"></div>
+<datalist id="time-options" data-keep>
+  <option value="06:00"></option><option value="07:00"></option><option value="08:00"></option><option value="10:00"></option>
+  <option value="12:00"></option><option value="15:00"></option><option value="16:00"></option><option value="17:00"></option>
+  <option value="17:30"></option><option value="18:00"></option><option value="18:30"></option><option value="19:00"></option>
+  <option value="19:30"></option><option value="20:00"></option><option value="20:30"></option>
+  <option value="Dopoludnia"></option><option value="Poobede"></option><option value="Podvečer"></option>
+  <option value="Večer"></option><option value="Celý deň"></option><option value="Flexibilne"></option>
+</datalist>
+<script id="plan-data" type="application/json" data-keep>{"v":1,"updatedAt":1794937204255,"weeks":[{"note":"Plánovaný objem behu: 28 km","tag":"","u":0},{"note":"Plánovaný objem behu: 30 km","tag":"","u":0},{"note":"Plánovaný objem behu: 32 km","tag":"","u":0},{"note":"Plánovaný objem behu: 34 km","tag":"","u":0},{"note":"Plánovaný objem behu: 36 km","tag":"","u":0},{"note":"Plánovaný objem behu: 38 km","tag":"Vianoce 🎄","u":0},{"note":"Plánovaný objem behu: 40 km","tag":"Silvester 🎆","u":0}],"days":{"2026-11-16":{"type":"upperA","time":"17:00","title":"Posilňovňa – Upper A","desc":"Horizontálny tlak a ťah (podľa šablóny Upper A). Nastav základné pracovné váhy s rezervou 2 opakovaní v každej sérii (RIR 2).","ex":[{"n":"Bench press s veľkou činkou","d":"4 série × 6–8 opakovaní (pauza 2,5 min)"},{"n":"Príťahy veľkej činky v predklone","d":"4 série × 8–10 opakovaní (na hrúbku chrbta)"},{"n":"Šikmé tlaky s jednoručkami (Incline DB Press)","d":"3 série × 8–10 opakovaní (horný hrudník)"},{"n":"Zhyby naširoko (alebo sťahovanie hornej kladky)","d":"3 série × 8–10 opakovaní"},{"n":"Upažovanie s jednoručkami v stoji","d":"3 série × 12–15 opakovaní (stredné ramená)"},{"n":"Bicepsové zdvihy s veľkou činkou + Tricepsové stláčanie kladky","d":"3 série × 10–12 opakovaní (superséria)"}],"done":true,"u":1794937204255},"2026-11-17":{"type":"intervals","time":"Dopoludnia (pred doučovaním 15:00–19:00)","title":"Beh – Intervaly 1000 m (8,0 km)","desc":"2,0 km rozklus v Zóne 2 (tep do 154 bpm) + 4x 1000 m v tempe 4:12–4:15/km + 4x 500 m veľmi ľahký medziklus/výklus.","ex":[],"done":true,"u":1794937204255},"2026-11-18":{"type":"lower","time":"Podvečer","title":"Posilňovňa – Lower","desc":"Nohy a Core (podľa šablóny Lower). Dôraz na techniku zadných drepov (4x5–6) a kontrolovanú excentrickú fázu pri výponoch na lýtka (2 s výdrž dole).","ex":[{"n":"Zadný drep s veľkou činkou","d":"4 série × 5–6 opakovaní (budovanie sily bez extrémnej svalovice na štvrtok)"},{"n":"Rumunský mŕtvy ťah (RDL)","d":"3 série × 8 opakovaní (hamstringy, sedacie svaly a sila odrazu)"},{"n":"Bulharské drepy na jednej nohe","d":"3 série × 8 opakovaní na každú nohu (stabilita panvy a kolena)"},{"n":"Výpony na lýtka so záťažou","d":"4 série × 12 opakovaní (dole 2-sekundová pauza pre tuhosť Achillovej šľachy)"},{"n":"Stred tela (Core)","d":"Plank so záťažou 3 série × 60 sekúnd + Dvíhanie nôh vo vise 3 série × 12 opakovaní"}],"done":false,"u":0},"2026-11-19":{"type":"z2","time":"20:00 (po doučovaní 15:00–19:00)","title":"Beh – Zóna 2 (8,0 km)","desc":"Súvislý aeróbny beh 8,0 km. Udržiavaj tep striktne v pásme 147–154 bpm (orientačné tempo cca 5:35–5:45/km).","ex":[],"done":false,"u":0},"2026-11-20":{"type":"upperB","time":"Poobede","title":"Posilňovňa – Upper B","desc":"Vertikálny tlak a ťah (podľa šablóny Upper B). Plynulý silový tréning vrchu tela pred víkendom.","ex":[{"n":"Tlaky nad hlavu v stoji s veľkou činkou (OHP)","d":"4 série × 6–8 opakovaní"},{"n":"Zhyby podhmatom so záťažou (alebo príťahy kladky úzkym úchopom)","d":"4 série × 6–8 opakovaní"},{"n":"Kľuky na bradlách (Dipy)","d":"3 série × 8–10 opakovaní (hrudník a triceps)"},{"n":"Príťahy spodnej kladky v sede (veslovanie)","d":"3 série × 10–12 opakovaní (dôraz na stiahnutie lopatiek)"},{"n":"Face-pulls na kladke","d":"3 série × 15 opakovaní (zadné ramená a rotátory)"},{"n":"Kladivové zdvihy s jednoručkami + Francúzsky tlak","d":"3 série × 10–12 opakovaní (superséria na ruky)"}],"done":false,"u":0},"2026-11-21":{"type":"rest","time":"Celý deň","title":"Voľno a regenerácia","desc":"Úplný oddych pre dolné končatiny pred nedeľným kombinovaným dlhým behom.","ex":[],"done":false,"u":0},"2026-11-22":{"type":"long","time":"18:00","title":"Dlhý beh s tempovým záverom (12,0 km)","desc":"9,0 km plynulo v Zóne 2 (tep 147–154 bpm) + 2,0 km plynulé zrýchlenie na prahové tempo 4:45–4:48/km + 1,0 km ľahký výklus.","ex":[],"done":false,"u":0},"2026-11-23":{"type":"upperA","time":"17:00","title":"Posilňovňa – Upper A","desc":"Horizontálny tlak a ťah (šablóna Upper A). Pri zachovaní váhy z minulého týždňa pridaj +1 opakovanie v každej sérii na bench presse a príťahoch.","ex":[{"n":"Bench press s veľkou činkou","d":"4 série × 6–8 opakovaní (pauza 2,5 min)"},{"n":"Príťahy veľkej činky v predklone","d":"4 série × 8–10 opakovaní (na hrúbku chrbta)"},{"n":"Šikmé tlaky s jednoručkami (Incline DB Press)","d":"3 série × 8–10 opakovaní (horný hrudník)"},{"n":"Zhyby naširoko (alebo sťahovanie hornej kladky)","d":"3 série × 8–10 opakovaní"},{"n":"Upažovanie s jednoručkami v stoji","d":"3 série × 12–15 opakovaní (stredné ramená)"},{"n":"Bicepsové zdvihy s veľkou činkou + Tricepsové stláčanie kladky","d":"3 série × 10–12 opakovaní (superséria)"}],"done":false,"u":0},"2026-11-24":{"type":"intervals","time":"Dopoludnia (pred doučovaním 15:00–19:00)","title":"Beh – Intervaly 800 m (8,0 km)","desc":"1,7 km rozklus v Zóne 2 + 6x 800 m v tempe 4:08–4:10/km (3:18–3:20 na úsek) + 5x 300 m ľahký medziklus (cca 105–110 s).","ex":[],"done":false,"u":0},"2026-11-25":{"type":"lower","time":"Podvečer","title":"Posilňovňa – Lower","desc":"Nohy a Core (šablóna Lower). Zvýš váhu na zadnom drepe a rumunskom mŕtvom ťahu o +2,5 kg pri zachovaní 5–6 opakovaní (drep) a 8 opakovaní (RDL).","ex":[{"n":"Zadný drep s veľkou činkou","d":"4 série × 5–6 opakovaní (budovanie sily bez extrémnej svalovice na štvrtok)"},{"n":"Rumunský mŕtvy ťah (RDL)","d":"3 série × 8 opakovaní (hamstringy, sedacie svaly a sila odrazu)"},{"n":"Bulharské drepy na jednej nohe","d":"3 série × 8 opakovaní na každú nohu (stabilita panvy a kolena)"},{"n":"Výpony na lýtka so záťažou","d":"4 série × 12 opakovaní (dole 2-sekundová pauza pre tuhosť Achillovej šľachy)"},{"n":"Stred tela (Core)","d":"Plank so záťažou 3 série × 60 sekúnd + Dvíhanie nôh vo vise 3 série × 12 opakovaní"}],"done":false,"u":0},"2026-11-26":{"type":"z2","time":"20:00 (po doučovaní 15:00–19:00)","title":"Beh – Zóna 2 (9,0 km)","desc":"Aeróbny beh 9,0 km s tepom 147–154 bpm, sústreď sa na ľahký krok a uvoľnenú kadenciu nad 172 krokov/min.","ex":[],"done":false,"u":0},"2026-11-27":{"type":"upperB","time":"Poobede","title":"Posilňovňa – Upper B","desc":"Vertikálny tlak a ťah (šablóna Upper B). Snaž sa pridať +1 opakovanie v každej sérii na tlakoch nad hlavu (OHP) a zhyboch podhmatom.","ex":[{"n":"Tlaky nad hlavu v stoji s veľkou činkou (OHP)","d":"4 série × 6–8 opakovaní"},{"n":"Zhyby podhmatom so záťažou (alebo príťahy kladky úzkym úchopom)","d":"4 série × 6–8 opakovaní"},{"n":"Kľuky na bradlách (Dipy)","d":"3 série × 8–10 opakovaní (hrudník a triceps)"},{"n":"Príťahy spodnej kladky v sede (veslovanie)","d":"3 série × 10–12 opakovaní (dôraz na stiahnutie lopatiek)"},{"n":"Face-pulls na kladke","d":"3 série × 15 opakovaní (zadné ramená a rotátory)"},{"n":"Kladivové zdvihy s jednoručkami + Francúzsky tlak","d":"3 série × 10–12 opakovaní (superséria na ruky)"}],"done":false,"u":0},"2026-11-28":{"type":"rest","time":"Celý deň","title":"Voľno a regenerácia","desc":"Oddych, 10–15 minút ľahký strečing bedrových ohýbačov, sedacích svalov a lýtok.","ex":[],"done":false,"u":0},"2026-11-29":{"type":"long","time":"18:00","title":"Čistý dlhý beh v Zóne 2 (13,0 km)","desc":"Celých 13,0 km plynulo v čistej Zóne 2 (tep 147–154 bpm) bez záverečného zrýchlenia.","ex":[],"done":false,"u":0},"2026-11-30":{"type":"upperA","time":"17:00","title":"Posilňovňa – Upper A","desc":"Horizontálny tlak a ťah (šablóna Upper A). Zvýš pracovnú váhu na hlavných tlakových a ťahových cvikoch o +2,5 kg a vráť sa na 6–8 opakovaní.","ex":[{"n":"Bench press s veľkou činkou","d":"4 série × 6–8 opakovaní (pauza 2,5 min)"},{"n":"Príťahy veľkej činky v predklone","d":"4 série × 8–10 opakovaní (na hrúbku chrbta)"},{"n":"Šikmé tlaky s jednoručkami (Incline DB Press)","d":"3 série × 8–10 opakovaní (horný hrudník)"},{"n":"Zhyby naširoko (alebo sťahovanie hornej kladky)","d":"3 série × 8–10 opakovaní"},{"n":"Upažovanie s jednoručkami v stoji","d":"3 série × 12–15 opakovaní (stredné ramená)"},{"n":"Bicepsové zdvihy s veľkou činkou + Tricepsové stláčanie kladky","d":"3 série × 10–12 opakovaní (superséria)"}],"done":false,"u":0},"2026-12-01":{"type":"intervals","time":"Dopoludnia (pred doučovaním 15:00–19:00)","title":"Beh – Intervaly 1000 m (9,0 km)","desc":"1,5 km rozklus v Zóne 2 + 5x 1000 m v tempe 4:10–4:12/km + 5x 500 m ľahký medziklus.","ex":[],"done":false,"u":0},"2026-12-02":{"type":"lower","time":"Podvečer","title":"Posilňovňa – Lower","desc":"Nohy a Core (šablóna Lower). Ponechaj rovnakú váhu ako v 2. týždni, sústreď sa na výbušný odraz z dolnej pozície drepu a pevné lýtka.","ex":[{"n":"Zadný drep s veľkou činkou","d":"4 série × 5–6 opakovaní (budovanie sily bez extrémnej svalovice na štvrtok)"},{"n":"Rumunský mŕtvy ťah (RDL)","d":"3 série × 8 opakovaní (hamstringy, sedacie svaly a sila odrazu)"},{"n":"Bulharské drepy na jednej nohe","d":"3 série × 8 opakovaní na každú nohu (stabilita panvy a kolena)"},{"n":"Výpony na lýtka so záťažou","d":"4 série × 12 opakovaní (dole 2-sekundová pauza pre tuhosť Achillovej šľachy)"},{"n":"Stred tela (Core)","d":"Plank so záťažou 3 série × 60 sekúnd + Dvíhanie nôh vo vise 3 série × 12 opakovaní"}],"done":false,"u":0},"2026-12-03":{"type":"z2","time":"20:00 (po doučovaní 15:00–19:00)","title":"Beh – Zóna 2 (9,0 km)","desc":"Pokojný aeróbny beh 9,0 km, prísne si stráž strop tepu do 154 bpm aj v miernych stúpaniach.","ex":[],"done":false,"u":0},"2026-12-04":{"type":"upperB","time":"Poobede","title":"Posilňovňa – Upper B","desc":"Vertikálny tlak a ťah (šablóna Upper B). Pridaj záťaž +2,5 kg na zhyboch podhmatom a kľukoch na bradlách (alebo zvýš OHP o +2,5 kg).","ex":[{"n":"Tlaky nad hlavu v stoji s veľkou činkou (OHP)","d":"4 série × 6–8 opakovaní"},{"n":"Zhyby podhmatom so záťažou (alebo príťahy kladky úzkym úchopom)","d":"4 série × 6–8 opakovaní"},{"n":"Kľuky na bradlách (Dipy)","d":"3 série × 8–10 opakovaní (hrudník a triceps)"},{"n":"Príťahy spodnej kladky v sede (veslovanie)","d":"3 série × 10–12 opakovaní (dôraz na stiahnutie lopatiek)"},{"n":"Face-pulls na kladke","d":"3 série × 15 opakovaní (zadné ramená a rotátory)"},{"n":"Kladivové zdvihy s jednoručkami + Francúzsky tlak","d":"3 série × 10–12 opakovaní (superséria na ruky)"}],"done":false,"u":0},"2026-12-05":{"type":"rest","time":"Celý deň","title":"Voľno a regenerácia","desc":"Oddych nôh, zvýš príjem komplexných sacharidov pri večeri pred nedeľným 14 km behom.","ex":[],"done":false,"u":0},"2026-12-06":{"type":"long","time":"18:00","title":"Dlhý beh s tempovým záverom (14,0 km)","desc":"10,5 km v Zóne 2 (tep 147–154 bpm) + 2,5 km (cca 11,5 min) v prahovom tempe 4:42–4:45/km + 1,0 km ľahký výklus.","ex":[],"done":false,"u":0},"2026-12-07":{"type":"upperA","time":"17:00","title":"Posilňovňa – Upper A","desc":"Horizontálny tlak a ťah (šablóna Upper A). Podrž váhy z 3. týždňa a snaž sa pridať +1 opakovanie v posledných dvoch sériách.","ex":[{"n":"Bench press s veľkou činkou","d":"4 série × 6–8 opakovaní (pauza 2,5 min)"},{"n":"Príťahy veľkej činky v predklone","d":"4 série × 8–10 opakovaní (na hrúbku chrbta)"},{"n":"Šikmé tlaky s jednoručkami (Incline DB Press)","d":"3 série × 8–10 opakovaní (horný hrudník)"},{"n":"Zhyby naširoko (alebo sťahovanie hornej kladky)","d":"3 série × 8–10 opakovaní"},{"n":"Upažovanie s jednoručkami v stoji","d":"3 série × 12–15 opakovaní (stredné ramená)"},{"n":"Bicepsové zdvihy s veľkou činkou + Tricepsové stláčanie kladky","d":"3 série × 10–12 opakovaní (superséria)"}],"done":false,"u":0},"2026-12-08":{"type":"intervals","time":"Dopoludnia (pred doučovaním 15:00–19:00)","title":"Beh – Intervaly 400 m (9,0 km)","desc":"2,0 km rozklus v Zóne 2 + 10x 400 m v tempe 3:55–3:58/km (94–95 s na úsek) + 10x 200 m ľahký medziklus (cca 75 s) + 1,0 km výklus.","ex":[],"done":false,"u":0},"2026-12-09":{"type":"lower","time":"Podvečer","title":"Posilňovňa – Lower (Odľahčený)","desc":"Nohy a Core (šablóna Lower). Po utorňajších štvorstovkách uber 1 sériu na drepoch (iba 3x5 namiesto 4x5) a 1 sériu na bulharských drepoch (2x8) pre šetrenie šliach.","ex":[{"n":"Zadný drep s veľkou činkou","d":"3 série × 5 opakovaní (odľahčené – o 1 sériu menej)"},{"n":"Rumunský mŕtvy ťah (RDL)","d":"3 série × 8 opakovaní (hamstringy, sedacie svaly a sila odrazu)"},{"n":"Bulharské drepy na jednej nohe","d":"2 série × 8 opakovaní na každú nohu (odľahčené – o 1 sériu menej)"},{"n":"Výpony na lýtka so záťažou","d":"4 série × 12 opakovaní (dole 2-sekundová pauza pre tuhosť Achillovej šľachy)"},{"n":"Stred tela (Core)","d":"Plank so záťažou 3 série × 60 sekúnd + Dvíhanie nôh vo vise 3 série × 12 opakovaní"}],"done":false,"u":0},"2026-12-10":{"type":"z2","time":"20:00 (po doučovaní 15:00–19:00)","title":"Beh – Zóna 2 (10,0 km)","desc":"Aeróbny beh 10,0 km. Striktne drž tep v pásme 147–154 bpm.","ex":[],"done":false,"u":0},"2026-12-11":{"type":"upperB","time":"Poobede","title":"Posilňovňa – Upper B","desc":"Vertikálny tlak a ťah (šablóna Upper B). Plný objem na vrch tela, zameraj sa na 2-sekundové spúšťanie činky pri každom opakovaní.","ex":[{"n":"Tlaky nad hlavu v stoji s veľkou činkou (OHP)","d":"4 série × 6–8 opakovaní"},{"n":"Zhyby podhmatom so záťažou (alebo príťahy kladky úzkym úchopom)","d":"4 série × 6–8 opakovaní"},{"n":"Kľuky na bradlách (Dipy)","d":"3 série × 8–10 opakovaní (hrudník a triceps)"},{"n":"Príťahy spodnej kladky v sede (veslovanie)","d":"3 série × 10–12 opakovaní (dôraz na stiahnutie lopatiek)"},{"n":"Face-pulls na kladke","d":"3 série × 15 opakovaní (zadné ramená a rotátory)"},{"n":"Kladivové zdvihy s jednoručkami + Francúzsky tlak","d":"3 série × 10–12 opakovaní (superséria na ruky)"}],"done":false,"u":0},"2026-12-12":{"type":"rest","time":"Celý deň","title":"Voľno a regenerácia","desc":"10 minút uvoľňovanie lýtok, kvadricepsov a zadných stehien na penovom valci (foam roller).","ex":[],"done":false,"u":0},"2026-12-13":{"type":"long","time":"18:00","title":"Čistý dlhý beh v Zóne 2 (15,0 km)","desc":"Súvislý 15,0 km vytrvalostný beh v Zóne 2 (147–154 bpm) bez záverečného zrýchlenia.","ex":[],"done":false,"u":0},"2026-12-14":{"type":"upperA","time":"17:00","title":"Posilňovňa – Upper A","desc":"Horizontálny tlak a ťah (šablóna Upper A). Navýš váhu na bench presse a príťahoch v predklone o ďalších +2,5 kg a odcvič série po 6 opakovaní.","ex":[{"n":"Bench press s veľkou činkou","d":"4 série × 6–8 opakovaní (pauza 2,5 min)"},{"n":"Príťahy veľkej činky v predklone","d":"4 série × 8–10 opakovaní (na hrúbku chrbta)"},{"n":"Šikmé tlaky s jednoručkami (Incline DB Press)","d":"3 série × 8–10 opakovaní (horný hrudník)"},{"n":"Zhyby naširoko (alebo sťahovanie hornej kladky)","d":"3 série × 8–10 opakovaní"},{"n":"Upažovanie s jednoručkami v stoji","d":"3 série × 12–15 opakovaní (stredné ramená)"},{"n":"Bicepsové zdvihy s veľkou činkou + Tricepsové stláčanie kladky","d":"3 série × 10–12 opakovaní (superséria)"}],"done":false,"u":0},"2026-12-15":{"type":"intervals","time":"Dopoludnia (pred doučovaním 15:00–19:00)","title":"Beh – Intervaly 1000 m (9,5 km)","desc":"2,0 km rozklus v Zóne 2 + 5x 1000 m v tempe 4:06–4:09/km + 5x 500 m ľahký medziklus.","ex":[],"done":false,"u":0},"2026-12-16":{"type":"lower","time":"Podvečer","title":"Posilňovňa – Lower","desc":"Nohy a Core (šablóna Lower). Plné 4 série zadných drepov (4x5) a 3 série rumunského mŕtveho ťahu (zvýšenie váhy o +2,5 kg oproti 3. týždňu).","ex":[{"n":"Zadný drep s veľkou činkou","d":"4 série × 5–6 opakovaní (budovanie sily bez extrémnej svalovice na štvrtok)"},{"n":"Rumunský mŕtvy ťah (RDL)","d":"3 série × 8 opakovaní (hamstringy, sedacie svaly a sila odrazu)"},{"n":"Bulharské drepy na jednej nohe","d":"3 série × 8 opakovaní na každú nohu (stabilita panvy a kolena)"},{"n":"Výpony na lýtka so záťažou","d":"4 série × 12 opakovaní (dole 2-sekundová pauza pre tuhosť Achillovej šľachy)"},{"n":"Stred tela (Core)","d":"Plank so záťažou 3 série × 60 sekúnd + Dvíhanie nôh vo vise 3 série × 12 opakovaní"}],"done":false,"u":0},"2026-12-17":{"type":"z2","time":"20:00 (po doučovaní 15:00–19:00)","title":"Beh – Zóna 2 (10,5 km)","desc":"Pokojný aeróbny beh 10,5 km pri tepe 147–154 bpm.","ex":[],"done":false,"u":0},"2026-12-18":{"type":"upperB","time":"Poobede","title":"Posilňovňa – Upper B","desc":"Vertikálny tlak a ťah (šablóna Upper B). Posledný piatkový tréning pred vianočným týždňom, odmakaj všetky pracovné série naplno.","ex":[{"n":"Tlaky nad hlavu v stoji s veľkou činkou (OHP)","d":"4 série × 6–8 opakovaní"},{"n":"Zhyby podhmatom so záťažou (alebo príťahy kladky úzkym úchopom)","d":"4 série × 6–8 opakovaní"},{"n":"Kľuky na bradlách (Dipy)","d":"3 série × 8–10 opakovaní (hrudník a triceps)"},{"n":"Príťahy spodnej kladky v sede (veslovanie)","d":"3 série × 10–12 opakovaní (dôraz na stiahnutie lopatiek)"},{"n":"Face-pulls na kladke","d":"3 série × 15 opakovaní (zadné ramená a rotátory)"},{"n":"Kladivové zdvihy s jednoručkami + Francúzsky tlak","d":"3 série × 10–12 opakovaní (superséria na ruky)"}],"done":false,"u":0},"2026-12-19":{"type":"rest","time":"Celý deň","title":"Voľno a regenerácia","desc":"Kvalitný spánok a hydratácia pred 16 km behom.","ex":[],"done":false,"u":0},"2026-12-20":{"type":"long","time":"18:00","title":"Dlhý beh s tempovým záverom (16,0 km)","desc":"12,0 km v Zóne 2 (tep 147–154 bpm) + 3,0 km (cca 14 min) v prahovom tempe 4:38–4:42/km + 1,0 km ľahký výklus.","ex":[],"done":false,"u":0},"2026-12-21":{"type":"upperA","time":"17:00","title":"Posilňovňa – Upper A","desc":"Horizontálny tlak a ťah (šablóna Upper A). Štandardný ťažký tréning vrchu tela, pridaj +1 opakovanie s váhou z 5. týždňa.","ex":[{"n":"Bench press s veľkou činkou","d":"4 série × 6–8 opakovaní (pauza 2,5 min)"},{"n":"Príťahy veľkej činky v predklone","d":"4 série × 8–10 opakovaní (na hrúbku chrbta)"},{"n":"Šikmé tlaky s jednoručkami (Incline DB Press)","d":"3 série × 8–10 opakovaní (horný hrudník)"},{"n":"Zhyby naširoko (alebo sťahovanie hornej kladky)","d":"3 série × 8–10 opakovaní"},{"n":"Upažovanie s jednoručkami v stoji","d":"3 série × 12–15 opakovaní (stredné ramená)"},{"n":"Bicepsové zdvihy s veľkou činkou + Tricepsové stláčanie kladky","d":"3 série × 10–12 opakovaní (superséria)"}],"done":false,"u":0},"2026-12-22":{"type":"intervals","time":"Dopoludnia","title":"Beh – Intervaly 800 m (10,0 km)","desc":"2,0 km rozklus v Zóne 2 + 7x 800 m v tempe 4:02–4:05/km (3:13–3:16 na úsek) + 6x 400 m ľahký medziklus.","ex":[],"done":false,"u":0},"2026-12-23":{"type":"lower","time":"Poobede / Podvečer","title":"Posilňovňa – Lower","desc":"Nohy a Core (šablóna Lower). Predvianočný silový tréning nôh – ťažké drepy, rumunský mŕtvy ťah, bulharské drepy, lýtka a brucho.","ex":[{"n":"Zadný drep s veľkou činkou","d":"4 série × 5–6 opakovaní (budovanie sily bez extrémnej svalovice na štvrtok)"},{"n":"Rumunský mŕtvy ťah (RDL)","d":"3 série × 8 opakovaní (hamstringy, sedacie svaly a sila odrazu)"},{"n":"Bulharské drepy na jednej nohe","d":"3 série × 8 opakovaní na každú nohu (stabilita panvy a kolena)"},{"n":"Výpony na lýtka so záťažou","d":"4 série × 12 opakovaní (dole 2-sekundová pauza pre tuhosť Achillovej šľachy)"},{"n":"Stred tela (Core)","d":"Plank so záťažou 3 série × 60 sekúnd + Dvíhanie nôh vo vise 3 série × 12 opakovaní"}],"done":false,"u":0},"2026-12-24":{"type":"z2","time":"Dopoludnia (presun z večera)","title":"Beh – Zóna 2 (11,0 km)","desc":"Dopoludňajší vianočný beh 11,0 km pri tepe 147–154 bpm, aby bol večer voľný na štedrú večeru.","ex":[],"done":false,"u":0},"2026-12-25":{"type":"upperB","time":"Poobede","title":"Posilňovňa – Upper B (alebo Kalistenika)","desc":"Ak je fitko otvorené, odcvič Upper B. Ak je zatvorené, odcvič doma/vonku: 5 sérií zhybov, 5 sérií kľukov na bradlách a 5 sérií kľukov s ruksakom.","ex":[{"n":"Tlaky nad hlavu v stoji s veľkou činkou (OHP)","d":"4 série × 6–8 opakovaní"},{"n":"Zhyby podhmatom so záťažou (alebo príťahy kladky úzkym úchopom)","d":"4 série × 6–8 opakovaní"},{"n":"Kľuky na bradlách (Dipy)","d":"3 série × 8–10 opakovaní (hrudník a triceps)"},{"n":"Príťahy spodnej kladky v sede (veslovanie)","d":"3 série × 10–12 opakovaní (dôraz na stiahnutie lopatiek)"},{"n":"Face-pulls na kladke","d":"3 série × 15 opakovaní (zadné ramená a rotátory)"},{"n":"Kladivové zdvihy s jednoručkami + Francúzsky tlak","d":"3 série × 10–12 opakovaní (superséria na ruky)"}],"done":false,"u":0},"2026-12-26":{"type":"rest","time":"Celý deň","title":"Voľno a regenerácia","desc":"Prechádzka na čerstvom vzduchu a oddych nôh pred nedeľným 17 km behom.","ex":[],"done":false,"u":0},"2026-12-27":{"type":"long","time":"Podvečer (17:00–18:00)","title":"Čistý dlhý beh v Zóne 2 (17,0 km)","desc":"Pokojný vytrvalostný beh 17,0 km v čistej Zóne 2 (147–154 bpm) bez záverečného zrýchľovania.","ex":[],"done":false,"u":0},"2026-12-28":{"type":"upperA","time":"17:00","title":"Posilňovňa – Upper A","desc":"Horizontálny tlak a ťah (šablóna Upper A). Záverečný ťažký tlakový a ťahový tréning v roku 2026.","ex":[{"n":"Bench press s veľkou činkou","d":"4 série × 6–8 opakovaní (pauza 2,5 min)"},{"n":"Príťahy veľkej činky v predklone","d":"4 série × 8–10 opakovaní (na hrúbku chrbta)"},{"n":"Šikmé tlaky s jednoručkami (Incline DB Press)","d":"3 série × 8–10 opakovaní (horný hrudník)"},{"n":"Zhyby naširoko (alebo sťahovanie hornej kladky)","d":"3 série × 8–10 opakovaní"},{"n":"Upažovanie s jednoručkami v stoji","d":"3 série × 12–15 opakovaní (stredné ramená)"},{"n":"Bicepsové zdvihy s veľkou činkou + Tricepsové stláčanie kladky","d":"3 série × 10–12 opakovaní (superséria)"}],"done":false,"u":0},"2026-12-29":{"type":"intervals","time":"Dopoludnia","title":"Beh – Intervaly 1000 m (10,5 km)","desc":"1,5 km rozklus v Zóne 2 + 6x 1000 m v tempe 4:03–4:05/km + 6x 500 m ľahký medziklus.","ex":[],"done":false,"u":0},"2026-12-30":{"type":"lower","time":"Poobede","title":"Posilňovňa – Lower","desc":"Nohy a Core (šablóna Lower). Posledný tréning nôh v roku 2026, zameraj sa na silu hamstringov (RDL) a pevné lýtka.","ex":[{"n":"Zadný drep s veľkou činkou","d":"4 série × 5–6 opakovaní (budovanie sily bez extrémnej svalovice na štvrtok)"},{"n":"Rumunský mŕtvy ťah (RDL)","d":"3 série × 8 opakovaní (hamstringy, sedacie svaly a sila odrazu)"},{"n":"Bulharské drepy na jednej nohe","d":"3 série × 8 opakovaní na každú nohu (stabilita panvy a kolena)"},{"n":"Výpony na lýtka so záťažou","d":"4 série × 12 opakovaní (dole 2-sekundová pauza pre tuhosť Achillovej šľachy)"},{"n":"Stred tela (Core)","d":"Plank so záťažou 3 série × 60 sekúnd + Dvíhanie nôh vo vise 3 série × 12 opakovaní"}],"done":false,"u":0},"2026-12-31":{"type":"z2","time":"Dopoludnia alebo skoro poobede","title":"Beh – Zóna 2 (11,5 km)","desc":"Silvestrovský beh 11,5 km v tepe 147–154 bpm odbehnutý s predstihom pred večernou oslavou.","ex":[],"done":false,"u":0},"2027-01-01":{"type":"upperB","time":"Flexibilne (alebo presun na sobotu 2. 1.)","title":"Posilňovňa – Upper B","desc":"Vertikálny tlak a ťah (šablóna Upper B) podľa otváracích hodín.","ex":[{"n":"Tlaky nad hlavu v stoji s veľkou činkou (OHP)","d":"4 série × 6–8 opakovaní"},{"n":"Zhyby podhmatom so záťažou (alebo príťahy kladky úzkym úchopom)","d":"4 série × 6–8 opakovaní"},{"n":"Kľuky na bradlách (Dipy)","d":"3 série × 8–10 opakovaní (hrudník a triceps)"},{"n":"Príťahy spodnej kladky v sede (veslovanie)","d":"3 série × 10–12 opakovaní (dôraz na stiahnutie lopatiek)"},{"n":"Face-pulls na kladke","d":"3 série × 15 opakovaní (zadné ramená a rotátory)"},{"n":"Kladivové zdvihy s jednoručkami + Francúzsky tlak","d":"3 série × 10–12 opakovaní (superséria na ruky)"}],"done":false,"u":0},"2027-01-02":{"type":"rest","time":"Celý deň","title":"Voľno a regenerácia","desc":"Oddych a rehydratácia pred zavŕšením 40-kilometrového týždňa.","ex":[],"done":false,"u":0},"2027-01-03":{"type":"long","time":"18:00","title":"Dlhý beh s tempovým záverom (18,0 km)","desc":"13,5 km v Zóne 2 (tep 147–154 bpm) + 3,5 km (cca 16 min) v prahovom tempe 4:35/km + 1,0 km ľahký výklus.","ex":[],"done":false,"u":0}}}</script>
+<script id="app-script" data-keep>
+(function () {
+'use strict';
+
+/* =====================================================================
+   NASTAVENIA A PÔVODNÝ PLÁN (16. 11. 2026 – 3. 1. 2027)
+   ===================================================================== */
+const STORAGE_KEY = 'treningovy-plan-2026-11-16-v1';
+const START = '2026-11-16';
+const DAY_COUNT = 49;
+
+/* Typy dní (kategórie) – podľa skupiny sa mení farba karty */
+const TYPES = {
+  upperA:    { label: 'Posilňovňa – Upper A', group: 'gym' },
+  lower:     { label: 'Posilňovňa – Lower', group: 'gym' },
+  upperB:    { label: 'Posilňovňa – Upper B', group: 'gym' },
+  intervals: { label: 'Beh – Intervaly', group: 'intervals' },
+  z2:        { label: 'Beh – Zóna 2', group: 'z2' },
+  long:      { label: 'Beh – Dlhý beh', group: 'long' },
+  rest:      { label: 'Voľno a regenerácia', group: 'rest' },
+  other:     { label: 'Iný tréning', group: 'other' }
+};
+
+const GROUPS = {
+  intervals: { name: 'Intervaly', icon: '⚡', strip: 'bg-gradient-to-b from-red-500 to-orange-400', card: 'bg-orange-50 border-orange-200', badge: 'bg-red-100 text-red-700', dot: 'bg-gradient-to-br from-red-500 to-orange-400', sel: 'border-red-400 bg-red-50 ring-2 ring-red-400' },
+  z2:        { name: 'Zóna 2', icon: '🏃', strip: 'bg-gradient-to-b from-sky-500 to-teal-400', card: 'bg-sky-50 border-sky-200', badge: 'bg-sky-100 text-sky-800', dot: 'bg-gradient-to-br from-sky-500 to-teal-400', sel: 'border-sky-400 bg-sky-50 ring-2 ring-sky-400' },
+  long:      { name: 'Dlhý beh', icon: '🏞️', strip: 'bg-gradient-to-b from-violet-500 to-indigo-700', card: 'bg-violet-50 border-violet-200', badge: 'bg-violet-100 text-violet-800', dot: 'bg-gradient-to-br from-violet-500 to-indigo-700', sel: 'border-violet-400 bg-violet-50 ring-2 ring-violet-400' },
+  gym:       { name: 'Posilňovňa', icon: '🏋️', strip: 'bg-gradient-to-b from-emerald-400 to-green-600', card: 'bg-emerald-50 border-emerald-200', badge: 'bg-emerald-100 text-emerald-800', dot: 'bg-gradient-to-br from-emerald-400 to-green-600', sel: 'border-emerald-400 bg-emerald-50 ring-2 ring-emerald-400' },
+  rest:      { name: 'Voľno', icon: '😴', strip: 'bg-gradient-to-b from-slate-300 to-slate-400', card: 'bg-white border-slate-200', badge: 'bg-slate-200 text-slate-700', dot: 'bg-gradient-to-br from-slate-300 to-slate-400', sel: 'border-slate-400 bg-slate-50 ring-2 ring-slate-400' },
+  other:     { name: 'Iné', icon: '✨', strip: 'bg-gradient-to-b from-amber-400 to-yellow-500', card: 'bg-amber-50 border-amber-200', badge: 'bg-amber-100 text-amber-800', dot: 'bg-gradient-to-br from-amber-400 to-yellow-500', sel: 'border-amber-400 bg-amber-50 ring-2 ring-amber-400' }
+};
+
+/* Šablóny silových tréningov */
+const TPL = {
+  upperA: { name: 'Upper A – Horizontálny tlak a ťah', ex: [
+    { n: 'Bench press s veľkou činkou', d: '4 série × 6–8 opakovaní (pauza 2,5 min)' },
+    { n: 'Príťahy veľkej činky v predklone', d: '4 série × 8–10 opakovaní (na hrúbku chrbta)' },
+    { n: 'Šikmé tlaky s jednoručkami (Incline DB Press)', d: '3 série × 8–10 opakovaní (horný hrudník)' },
+    { n: 'Zhyby naširoko (alebo sťahovanie hornej kladky)', d: '3 série × 8–10 opakovaní' },
+    { n: 'Upažovanie s jednoručkami v stoji', d: '3 série × 12–15 opakovaní (stredné ramená)' },
+    { n: 'Bicepsové zdvihy s veľkou činkou + Tricepsové stláčanie kladky', d: '3 série × 10–12 opakovaní (superséria)' }
+  ]},
+  lower: { name: 'Lower – Silovo-bežecký tréning nôh a stredu tela', ex: [
+    { n: 'Zadný drep s veľkou činkou', d: '4 série × 5–6 opakovaní (budovanie sily bez extrémnej svalovice na štvrtok)' },
+    { n: 'Rumunský mŕtvy ťah (RDL)', d: '3 série × 8 opakovaní (hamstringy, sedacie svaly a sila odrazu)' },
+    { n: 'Bulharské drepy na jednej nohe', d: '3 série × 8 opakovaní na každú nohu (stabilita panvy a kolena)' },
+    { n: 'Výpony na lýtka so záťažou', d: '4 série × 12 opakovaní (dole 2-sekundová pauza pre tuhosť Achillovej šľachy)' },
+    { n: 'Stred tela (Core)', d: 'Plank so záťažou 3 série × 60 sekúnd + Dvíhanie nôh vo vise 3 série × 12 opakovaní' }
+  ]},
+  upperB: { name: 'Upper B – Vertikálny tlak a ťah', ex: [
+    { n: 'Tlaky nad hlavu v stoji s veľkou činkou (OHP)', d: '4 série × 6–8 opakovaní' },
+    { n: 'Zhyby podhmatom so záťažou (alebo príťahy kladky úzkym úchopom)', d: '4 série × 6–8 opakovaní' },
+    { n: 'Kľuky na bradlách (Dipy)', d: '3 série × 8–10 opakovaní (hrudník a triceps)' },
+    { n: 'Príťahy spodnej kladky v sede (veslovanie)', d: '3 série × 10–12 opakovaní (dôraz na stiahnutie lopatiek)' },
+    { n: 'Face-pulls na kladke', d: '3 série × 15 opakovaní (zadné ramená a rotátory)' },
+    { n: 'Kladivové zdvihy s jednoručkami + Francúzsky tlak', d: '3 série × 10–12 opakovaní (superséria na ruky)' }
+  ]}
+};
+
+const WEEKS = [
+  { note: 'Plánovaný objem behu: 28 km', tag: '' },
+  { note: 'Plánovaný objem behu: 30 km', tag: '' },
+  { note: 'Plánovaný objem behu: 32 km', tag: '' },
+  { note: 'Plánovaný objem behu: 34 km', tag: '' },
+  { note: 'Plánovaný objem behu: 36 km', tag: '' },
+  { note: 'Plánovaný objem behu: 38 km', tag: 'Vianoce 🎄' },
+  { note: 'Plánovaný objem behu: 40 km', tag: 'Silvester 🎆' }
+];
+
+const HOLIDAYS = {
+  '2026-12-24': 'Štedrý deň', '2026-12-25': '1. sviatok vianočný', '2026-12-26': '2. sviatok vianočný',
+  '2026-12-31': 'Silvester', '2027-01-01': 'Nový rok'
+};
+
+const DOP = 'Dopoludnia (pred doučovaním 15:00–19:00)';
+const VEC = '20:00 (po doučovaní 15:00–19:00)';
+const ZONE = 'Zóne 2 (tep 147–154 bpm)';
+
+/* [typ, čas, názov, rozpis] – deň po dni od pondelka 16. 11. 2026 */
+const RAW = [
+  // TÝŽDEŇ 1
+  ['upperA', '17:00', 'Posilňovňa – Upper A', 'Horizontálny tlak a ťah (podľa šablóny Upper A). Nastav základné pracovné váhy s rezervou 2 opakovaní v každej sérii (RIR 2).'],
+  ['intervals', DOP, 'Beh – Intervaly 1000 m (8,0 km)', '2,0 km rozklus v Zóne 2 (tep do 154 bpm) + 4x 1000 m v tempe 4:12–4:15/km + 4x 500 m veľmi ľahký medziklus/výklus.'],
+  ['lower', 'Podvečer', 'Posilňovňa – Lower', 'Nohy a Core (podľa šablóny Lower). Dôraz na techniku zadných drepov (4x5–6) a kontrolovanú excentrickú fázu pri výponoch na lýtka (2 s výdrž dole).'],
+  ['z2', VEC, 'Beh – Zóna 2 (8,0 km)', 'Súvislý aeróbny beh 8,0 km. Udržiavaj tep striktne v pásme 147–154 bpm (orientačné tempo cca 5:35–5:45/km).'],
+  ['upperB', 'Poobede', 'Posilňovňa – Upper B', 'Vertikálny tlak a ťah (podľa šablóny Upper B). Plynulý silový tréning vrchu tela pred víkendom.'],
+  ['rest', 'Celý deň', 'Voľno a regenerácia', 'Úplný oddych pre dolné končatiny pred nedeľným kombinovaným dlhým behom.'],
+  ['long', '18:00', 'Dlhý beh s tempovým záverom (12,0 km)', '9,0 km plynulo v ' + ZONE + ' + 2,0 km plynulé zrýchlenie na prahové tempo 4:45–4:48/km + 1,0 km ľahký výklus.'],
+  // TÝŽDEŇ 2
+  ['upperA', '17:00', 'Posilňovňa – Upper A', 'Horizontálny tlak a ťah (šablóna Upper A). Pri zachovaní váhy z minulého týždňa pridaj +1 opakovanie v každej sérii na bench presse a príťahoch.'],
+  ['intervals', DOP, 'Beh – Intervaly 800 m (8,0 km)', '1,7 km rozklus v Zóne 2 + 6x 800 m v tempe 4:08–4:10/km (3:18–3:20 na úsek) + 5x 300 m ľahký medziklus (cca 105–110 s).'],
+  ['lower', 'Podvečer', 'Posilňovňa – Lower', 'Nohy a Core (šablóna Lower). Zvýš váhu na zadnom drepe a rumunskom mŕtvom ťahu o +2,5 kg pri zachovaní 5–6 opakovaní (drep) a 8 opakovaní (RDL).'],
+  ['z2', VEC, 'Beh – Zóna 2 (9,0 km)', 'Aeróbny beh 9,0 km s tepom 147–154 bpm, sústreď sa na ľahký krok a uvoľnenú kadenciu nad 172 krokov/min.'],
+  ['upperB', 'Poobede', 'Posilňovňa – Upper B', 'Vertikálny tlak a ťah (šablóna Upper B). Snaž sa pridať +1 opakovanie v každej sérii na tlakoch nad hlavu (OHP) a zhyboch podhmatom.'],
+  ['rest', 'Celý deň', 'Voľno a regenerácia', 'Oddych, 10–15 minút ľahký strečing bedrových ohýbačov, sedacích svalov a lýtok.'],
+  ['long', '18:00', 'Čistý dlhý beh v Zóne 2 (13,0 km)', 'Celých 13,0 km plynulo v čistej ' + ZONE + ' bez záverečného zrýchlenia.'],
+  // TÝŽDEŇ 3
+  ['upperA', '17:00', 'Posilňovňa – Upper A', 'Horizontálny tlak a ťah (šablóna Upper A). Zvýš pracovnú váhu na hlavných tlakových a ťahových cvikoch o +2,5 kg a vráť sa na 6–8 opakovaní.'],
+  ['intervals', DOP, 'Beh – Intervaly 1000 m (9,0 km)', '1,5 km rozklus v Zóne 2 + 5x 1000 m v tempe 4:10–4:12/km + 5x 500 m ľahký medziklus.'],
+  ['lower', 'Podvečer', 'Posilňovňa – Lower', 'Nohy a Core (šablóna Lower). Ponechaj rovnakú váhu ako v 2. týždni, sústreď sa na výbušný odraz z dolnej pozície drepu a pevné lýtka.'],
+  ['z2', VEC, 'Beh – Zóna 2 (9,0 km)', 'Pokojný aeróbny beh 9,0 km, prísne si stráž strop tepu do 154 bpm aj v miernych stúpaniach.'],
+  ['upperB', 'Poobede', 'Posilňovňa – Upper B', 'Vertikálny tlak a ťah (šablóna Upper B). Pridaj záťaž +2,5 kg na zhyboch podhmatom a kľukoch na bradlách (alebo zvýš OHP o +2,5 kg).'],
+  ['rest', 'Celý deň', 'Voľno a regenerácia', 'Oddych nôh, zvýš príjem komplexných sacharidov pri večeri pred nedeľným 14 km behom.'],
+  ['long', '18:00', 'Dlhý beh s tempovým záverom (14,0 km)', '10,5 km v ' + ZONE + ' + 2,5 km (cca 11,5 min) v prahovom tempe 4:42–4:45/km + 1,0 km ľahký výklus.'],
+  // TÝŽDEŇ 4
+  ['upperA', '17:00', 'Posilňovňa – Upper A', 'Horizontálny tlak a ťah (šablóna Upper A). Podrž váhy z 3. týždňa a snaž sa pridať +1 opakovanie v posledných dvoch sériách.'],
+  ['intervals', DOP, 'Beh – Intervaly 400 m (9,0 km)', '2,0 km rozklus v Zóne 2 + 10x 400 m v tempe 3:55–3:58/km (94–95 s na úsek) + 10x 200 m ľahký medziklus (cca 75 s) + 1,0 km výklus.'],
+  ['lower', 'Podvečer', 'Posilňovňa – Lower (Odľahčený)', 'Nohy a Core (šablóna Lower). Po utorňajších štvorstovkách uber 1 sériu na drepoch (iba 3x5 namiesto 4x5) a 1 sériu na bulharských drepoch (2x8) pre šetrenie šliach.'],
+  ['z2', VEC, 'Beh – Zóna 2 (10,0 km)', 'Aeróbny beh 10,0 km. Striktne drž tep v pásme 147–154 bpm.'],
+  ['upperB', 'Poobede', 'Posilňovňa – Upper B', 'Vertikálny tlak a ťah (šablóna Upper B). Plný objem na vrch tela, zameraj sa na 2-sekundové spúšťanie činky pri každom opakovaní.'],
+  ['rest', 'Celý deň', 'Voľno a regenerácia', '10 minút uvoľňovanie lýtok, kvadricepsov a zadných stehien na penovom valci (foam roller).'],
+  ['long', '18:00', 'Čistý dlhý beh v Zóne 2 (15,0 km)', 'Súvislý 15,0 km vytrvalostný beh v Zóne 2 (147–154 bpm) bez záverečného zrýchlenia.'],
+  // TÝŽDEŇ 5
+  ['upperA', '17:00', 'Posilňovňa – Upper A', 'Horizontálny tlak a ťah (šablóna Upper A). Navýš váhu na bench presse a príťahoch v predklone o ďalších +2,5 kg a odcvič série po 6 opakovaní.'],
+  ['intervals', DOP, 'Beh – Intervaly 1000 m (9,5 km)', '2,0 km rozklus v Zóne 2 + 5x 1000 m v tempe 4:06–4:09/km + 5x 500 m ľahký medziklus.'],
+  ['lower', 'Podvečer', 'Posilňovňa – Lower', 'Nohy a Core (šablóna Lower). Plné 4 série zadných drepov (4x5) a 3 série rumunského mŕtveho ťahu (zvýšenie váhy o +2,5 kg oproti 3. týždňu).'],
+  ['z2', VEC, 'Beh – Zóna 2 (10,5 km)', 'Pokojný aeróbny beh 10,5 km pri tepe 147–154 bpm.'],
+  ['upperB', 'Poobede', 'Posilňovňa – Upper B', 'Vertikálny tlak a ťah (šablóna Upper B). Posledný piatkový tréning pred vianočným týždňom, odmakaj všetky pracovné série naplno.'],
+  ['rest', 'Celý deň', 'Voľno a regenerácia', 'Kvalitný spánok a hydratácia pred 16 km behom.'],
+  ['long', '18:00', 'Dlhý beh s tempovým záverom (16,0 km)', '12,0 km v ' + ZONE + ' + 3,0 km (cca 14 min) v prahovom tempe 4:38–4:42/km + 1,0 km ľahký výklus.'],
+  // TÝŽDEŇ 6 – VIANOCE
+  ['upperA', '17:00', 'Posilňovňa – Upper A', 'Horizontálny tlak a ťah (šablóna Upper A). Štandardný ťažký tréning vrchu tela, pridaj +1 opakovanie s váhou z 5. týždňa.'],
+  ['intervals', 'Dopoludnia', 'Beh – Intervaly 800 m (10,0 km)', '2,0 km rozklus v Zóne 2 + 7x 800 m v tempe 4:02–4:05/km (3:13–3:16 na úsek) + 6x 400 m ľahký medziklus.'],
+  ['lower', 'Poobede / Podvečer', 'Posilňovňa – Lower', 'Nohy a Core (šablóna Lower). Predvianočný silový tréning nôh – ťažké drepy, rumunský mŕtvy ťah, bulharské drepy, lýtka a brucho.'],
+  ['z2', 'Dopoludnia (presun z večera)', 'Beh – Zóna 2 (11,0 km)', 'Dopoludňajší vianočný beh 11,0 km pri tepe 147–154 bpm, aby bol večer voľný na štedrú večeru.'],
+  ['upperB', 'Poobede', 'Posilňovňa – Upper B (alebo Kalistenika)', 'Ak je fitko otvorené, odcvič Upper B. Ak je zatvorené, odcvič doma/vonku: 5 sérií zhybov, 5 sérií kľukov na bradlách a 5 sérií kľukov s ruksakom.'],
+  ['rest', 'Celý deň', 'Voľno a regenerácia', 'Prechádzka na čerstvom vzduchu a oddych nôh pred nedeľným 17 km behom.'],
+  ['long', 'Podvečer (17:00–18:00)', 'Čistý dlhý beh v Zóne 2 (17,0 km)', 'Pokojný vytrvalostný beh 17,0 km v čistej Zóne 2 (147–154 bpm) bez záverečného zrýchľovania.'],
+  // TÝŽDEŇ 7 – SILVESTER
+  ['upperA', '17:00', 'Posilňovňa – Upper A', 'Horizontálny tlak a ťah (šablóna Upper A). Záverečný ťažký tlakový a ťahový tréning v roku 2026.'],
+  ['intervals', 'Dopoludnia', 'Beh – Intervaly 1000 m (10,5 km)', '1,5 km rozklus v Zóne 2 + 6x 1000 m v tempe 4:03–4:05/km + 6x 500 m ľahký medziklus.'],
+  ['lower', 'Poobede', 'Posilňovňa – Lower', 'Nohy a Core (šablóna Lower). Posledný tréning nôh v roku 2026, zameraj sa na silu hamstringov (RDL) a pevné lýtka.'],
+  ['z2', 'Dopoludnia alebo skoro poobede', 'Beh – Zóna 2 (11,5 km)', 'Silvestrovský beh 11,5 km v tepe 147–154 bpm odbehnutý s predstihom pred večernou oslavou.'],
+  ['upperB', 'Flexibilne (alebo presun na sobotu 2. 1.)', 'Posilňovňa – Upper B', 'Vertikálny tlak a ťah (šablóna Upper B) podľa otváracích hodín.'],
+  ['rest', 'Celý deň', 'Voľno a regenerácia', 'Oddych a rehydratácia pred zavŕšením 40-kilometrového týždňa.'],
+  ['long', '18:00', 'Dlhý beh s tempovým záverom (18,0 km)', '13,5 km v ' + ZONE + ' + 3,5 km (cca 16 min) v prahovom tempe 4:35/km + 1,0 km ľahký výklus.']
+];
+
+/* =====================================================================
+   POMOCNÉ FUNKCIE
+   ===================================================================== */
+const DAY_NAMES = ['Nedeľa', 'Pondelok', 'Utorok', 'Streda', 'Štvrtok', 'Piatok', 'Sobota'];
+const DAY_SHORT = ['Ne', 'Po', 'Ut', 'St', 'Št', 'Pi', 'So'];
+const MONTHS = ['jan', 'feb', 'mar', 'apr', 'máj', 'jún', 'júl', 'aug', 'sep', 'okt', 'nov', 'dec'];
+const pad = n => String(n).padStart(2, '0');
+const clone = o => JSON.parse(JSON.stringify(o));
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+function addDays(iso, n) { const d = new Date(iso + 'T12:00:00Z'); d.setUTCDate(d.getUTCDate() + n); return d.toISOString().slice(0, 10); }
+const dow = iso => new Date(iso + 'T12:00:00Z').getUTCDay();
+const fmtShort = iso => (+iso.slice(8, 10)) + '. ' + (+iso.slice(5, 7)) + '.';
+const fmtFull = iso => fmtShort(iso) + ' ' + iso.slice(0, 4);
+const fmtLong = iso => DAY_NAMES[dow(iso)] + ' ' + fmtFull(iso);
+function todayIso() { const t = new Date(); return t.getFullYear() + '-' + pad(t.getMonth() + 1) + '-' + pad(t.getDate()); }
+const DATES = Array.from({ length: DAY_COUNT }, (_, i) => addDays(START, i));
+const END = DATES[DAY_COUNT - 1];
+const weekOf = iso => Math.floor(DATES.indexOf(iso) / 7);
+const typeOf = t => (TYPES[t] ? t : 'other');
+const groupOf = t => GROUPS[TYPES[typeOf(t)].group];
+const isGym = t => TYPES[typeOf(t)].group === 'gym';
+const usesExercises = t => isGym(t) || t === 'other';
+function weekRange(w) {
+  const a = DATES[w * 7], b = DATES[w * 7 + 6];
+  return (a.slice(0, 4) === b.slice(0, 4) ? fmtShort(a) : fmtFull(a)) + ' – ' + fmtFull(b);
+}
+
+const svg = (d, cls) => `<svg class="${cls || 'h-4 w-4'}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
+const IC = {
+  pencil: '<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/>',
+  swap: '<path d="M7 4 3 8l4 4"/><path d="M3 8h14"/><path d="m17 20 4-4-4-4"/><path d="M21 16H7"/>',
+  copy: '<rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/>',
+  download: '<path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/>',
+  reset: '<path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/>',
+  chev: '<path d="m6 9 6 6 6-6"/>',
+  left: '<path d="m15 18-6-6 6-6"/>',
+  right: '<path d="m9 18 6-6-6-6"/>',
+  x: '<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',
+  plus: '<path d="M12 5v14"/><path d="M5 12h14"/>',
+  trash: '<path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/>',
+  target: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/>',
+  clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+  up: '<path d="m18 15-6-6-6 6"/>'
+};
+
+/* =====================================================================
+   STAV PLÁNU (localStorage + dáta zapečené v HTML)
+   ===================================================================== */
+function buildDefault() {
+  const days = {};
+  RAW.forEach((r, i) => {
+    days[DATES[i]] = { type: r[0], time: r[1], title: r[2], desc: r[3], ex: TPL[r[0]] ? clone(TPL[r[0]].ex) : [], done: false, u: 0 };
+  });
+  const light = days['2026-12-09'].ex; // odľahčený Lower v 4. týždni
+  light[0].d = '3 série × 5 opakovaní (odľahčené – o 1 sériu menej)';
+  light[2].d = '2 série × 8 opakovaní na každú nohu (odľahčené – o 1 sériu menej)';
+  return { v: 1, updatedAt: 0, weeks: clone(WEEKS), days };
+}
+
+function normalize(s) {
+  const def = buildDefault();
+  if (!s || typeof s !== 'object' || !s.days || typeof s.days !== 'object') return def;
+  const out = { v: 1, updatedAt: +s.updatedAt || 0, weeks: [], days: {} };
+  for (let w = 0; w < 7; w++) out.weeks.push(Object.assign({}, def.weeks[w], (Array.isArray(s.weeks) && s.weeks[w]) || {}));
+  DATES.forEach(iso => {
+    const d = s.days[iso];
+    if (!d || typeof d !== 'object') { out.days[iso] = def.days[iso]; return; }
+    out.days[iso] = {
+      type: typeOf(d.type),
+      time: String(d.time == null ? '' : d.time),
+      title: String(d.title == null ? '' : d.title),
+      desc: String(d.desc == null ? '' : d.desc),
+      ex: Array.isArray(d.ex) ? d.ex.filter(e => e && (e.n || e.d)).map(e => ({ n: String(e.n || ''), d: String(e.d || '') })) : [],
+      done: !!d.done,
+      u: +d.u || 0
+    };
+  });
+  return out;
+}
+
+let storageOk = true;
+let bakedState = null;
+let conflict = false;
+
+function readBaked() {
+  try {
+    const t = (document.getElementById('plan-data').textContent || '').trim();
+    return t && t !== 'null' ? JSON.parse(t) : null;
+  } catch (e) { return null; }
+}
+function readLocal() {
+  try {
+    const t = localStorage.getItem(STORAGE_KEY);
+    return t ? JSON.parse(t) : null;
+  } catch (e) { storageOk = false; return null; }
+}
+function loadState() {
+  bakedState = readBaked();
+  const local = readLocal();
+  let pick = local || bakedState;
+  if (bakedState && local) {
+    if ((+bakedState.updatedAt || 0) > (+local.updatedAt || 0)) pick = bakedState;
+    else if (JSON.stringify(normalize(local).days) !== JSON.stringify(normalize(bakedState).days)) conflict = true;
+  }
+  return normalize(pick);
+}
+function saveLocal() {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); storageOk = true; }
+  catch (e) { storageOk = false; }
+}
+/* lokálna zmena: uloží do prehliadača a naplánuje odoslanie na GitHub */
+function persist() {
+  state.updatedAt = Date.now();
+  saveLocal();
+  onLocalChange();
+}
+/* označí deň ako zmenený (pre zlúčenie zmien medzi zariadeniami) */
+function touch(iso) { state.days[iso].u = Date.now(); }
+/* nahradí celý stav a označí všetky dni, ktoré sa tým zmenili */
+function replaceState(next) {
+  const now = Date.now();
+  DATES.forEach(iso => { if (JSON.stringify(next.days[iso]) !== JSON.stringify(state.days[iso])) next.days[iso].u = now; });
+  next.weeks.forEach((w, i) => { if (JSON.stringify(w) !== JSON.stringify(state.weeks[i])) w.u = now; });
+  state = next;
+  persist();
+}
+
+let state = loadState();
+let undoSnap = null;
+const openEx = new Set();
+let view = { week: 0 };
+
+function snapshot() { undoSnap = JSON.stringify(state); }
+function undo() {
+  if (!undoSnap) return;
+  replaceState(normalize(JSON.parse(undoSnap)));
+  undoSnap = null;
+  render();
+  toast('Zmena bola vrátená.');
+}
+
+/* =====================================================================
+   VYKRESLENIE
+   ===================================================================== */
+const app = document.getElementById('app');
+
+function legendHtml() {
+  return ['intervals', 'z2', 'long', 'gym', 'rest', 'other'].map(k => {
+    const g = GROUPS[k];
+    return `<span class="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-2.5 py-1 text-xs font-medium text-slate-200"><span class="h-2.5 w-2.5 rounded-full ${g.dot}"></span>${g.name}</span>`;
+  }).join('');
+}
+
+function headerHtml() {
+  const warn = storageOk ? '' :
+    `<p class="mt-3 rounded-xl bg-amber-400/15 px-3 py-2 text-xs text-amber-200 ring-1 ring-amber-300/30">⚠️ Tento prehliadač neumožňuje automatické ukladanie (localStorage). Zmeny si ulož tlačidlom „Uložiť upravený plán (.html)“.</p>`;
+  return `
+  <header class="bg-slate-900 text-white">
+    <div class="mx-auto max-w-3xl lg:max-w-5xl px-4 pb-5 pt-6 sm:px-6 sm:pt-8">
+      <p class="text-xs font-semibold uppercase tracking-widest text-sky-300">Beh + silový tréning</p>
+      <h1 class="mt-1 text-2xl font-extrabold tracking-tight sm:text-3xl">Tréningový plán</h1>
+      <p class="mt-1 text-sm text-slate-300">16. 11. 2026 – 3. 1. 2027 · 7 týždňov</p>
+      <div class="mt-4 flex flex-wrap gap-2">
+        <button type="button" data-action="save-html" class="inline-flex items-center gap-2 rounded-xl bg-white px-3.5 py-2.5 text-sm font-semibold text-slate-900 shadow-sm transition hover:bg-sky-50 active:scale-[.98]">${svg(IC.download)}Uložiť upravený plán (.html)</button>
+        <button type="button" data-action="reset" class="inline-flex items-center gap-2 rounded-xl bg-white/10 px-3.5 py-2.5 text-sm font-semibold text-white ring-1 ring-white/20 transition hover:bg-white/20 active:scale-[.98]">${svg(IC.reset)}Obnoviť pôvodný plán</button>
+      </div>
+      <div class="mt-3"><button type="button" id="sync-pill" data-action="sync-settings" class="inline-flex max-w-full items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 text-left text-xs font-semibold text-slate-100 ring-1 ring-white/15 transition hover:bg-white/20">${syncPillInner()}</button></div>
+      <p class="mt-2 text-xs leading-relaxed text-slate-400">${GH.owner ? 'Úpravy a odškrtnutia sa ukladajú v tomto prehliadači a automaticky sa synchronizujú cez GitHub – medzi počítačom aj mobilom.' : 'Úpravy a odškrtnutia sa ukladajú automaticky v tomto prehliadači. Na prenos do mobilu alebo zálohu stiahni upravený .html súbor.'}</p>
+      ${warn}
+      <div class="mt-4 flex flex-wrap gap-1.5">${legendHtml()}</div>
+    </div>
+  </header>`;
+}
+
+function navHtml() {
+  const tw = weekOf(todayIso());
+  const tab = (key, label, active, dot) => `<button type="button" data-action="week" data-week="${key}" ${active ? 'data-tab-active aria-current="true"' : ''}
+      class="relative shrink-0 whitespace-nowrap rounded-full px-3.5 py-2 text-sm font-semibold transition ${active ? 'bg-slate-900 text-white shadow' : 'bg-white text-slate-700 ring-1 ring-slate-200 hover:bg-slate-50'}">${label}${dot ? '<span class="absolute right-1.5 top-1.5 h-1.5 w-1.5 rounded-full bg-sky-500"></span>' : ''}</button>`;
+  let tabs = '';
+  for (let w = 0; w < 7; w++) tabs += tab(w, 'Týždeň ' + (w + 1), view.week === w, w === tw);
+  tabs += tab('all', 'Všetky týždne', view.week === 'all', false);
+  return `
+  <nav class="sticky top-0 z-30 border-b border-slate-200/80 bg-slate-100/90 backdrop-blur supports-[backdrop-filter]:bg-slate-100/75">
+    <div class="mx-auto flex max-w-3xl lg:max-w-5xl items-center gap-2 px-4 py-2.5 sm:px-6">
+      <div id="tabs" class="no-scrollbar relative -my-1 flex flex-1 gap-1.5 overflow-x-auto py-1 sm:flex-wrap sm:overflow-visible">${tabs}</div>
+      <button type="button" data-action="today" class="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-sky-600 px-3.5 py-2 text-sm font-semibold text-white shadow transition hover:bg-sky-700 active:scale-[.97]">${svg(IC.target)}<span class="sm:hidden">Dnes</span><span class="hidden sm:inline">Dnešný deň</span></button>
+    </div>
+  </nav>`;
+}
+
+function exHtml(iso, d) {
+  if (!d.ex.length) return '';
+  const tplName = TPL[d.type] ? TPL[d.type].name : 'Zoznam cvikov';
+  const items = d.ex.map((e, i) => `
+      <li class="flex gap-2.5">
+        <span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-slate-900/80 text-[11px] font-bold text-white">${i + 1}</span>
+        <div class="min-w-0"><div class="font-semibold text-slate-800">${esc(e.n)}</div>${e.d ? `<div class="text-slate-600">${esc(e.d)}</div>` : ''}</div>
+      </li>`).join('');
+  return `
+    <details class="ex-details mt-3 rounded-xl border border-black/10 bg-white/75" data-date="${iso}" ${openEx.has(iso) ? 'open' : ''}>
+      <summary class="flex items-center justify-between gap-2 rounded-xl px-3 py-2.5 text-sm font-semibold text-slate-800 hover:bg-white">
+        <span>🏋️ Cviky (${d.ex.length}) · <span class="font-medium text-slate-600">${esc(tplName)}</span></span>
+        ${svg(IC.chev, 'chev h-4 w-4 shrink-0 text-slate-500')}
+      </summary>
+      <ol class="space-y-2.5 border-t border-black/5 px-3 py-3 text-sm">${items}</ol>
+      <div class="px-3 pb-3"><button type="button" data-action="edit" data-date="${iso}" data-focus="ex" class="inline-flex items-center gap-1 text-xs font-semibold text-slate-600 underline-offset-2 hover:underline">${svg(IC.pencil, 'h-3.5 w-3.5')}Upraviť cviky</button></div>
+    </details>`;
+}
+
+function cardHtml(iso) {
+  const d = state.days[iso];
+  const g = groupOf(d.type);
+  const isToday = iso === todayIso();
+  const hol = HOLIDAYS[iso];
+  const btn = 'inline-flex items-center gap-1.5 rounded-lg bg-white/80 px-3 py-2 text-sm font-semibold text-slate-700 ring-1 ring-black/10 transition hover:bg-white active:scale-[.98]';
+  return `
+  <article id="d-${iso}" data-date="${iso}" class="day-card relative flex overflow-hidden rounded-2xl border shadow-sm ${g.card} ${d.done ? 'is-done' : ''} ${isToday ? 'ring-2 ring-sky-500 ring-offset-2 ring-offset-slate-100' : ''}">
+    <div class="w-1.5 shrink-0 ${g.strip}"></div>
+    <div class="min-w-0 flex-1 p-3.5 sm:p-4">
+      <div class="flex items-start gap-3">
+        <div class="w-11 shrink-0 pt-0.5 text-center">
+          <div class="text-[11px] font-bold uppercase tracking-wider text-slate-500">${DAY_SHORT[dow(iso)]}</div>
+          <div class="text-2xl font-extrabold leading-none text-slate-900">${+iso.slice(8, 10)}</div>
+          <div class="mt-0.5 text-[11px] font-medium text-slate-500">${MONTHS[+iso.slice(5, 7) - 1]}</div>
+        </div>
+        <div class="min-w-0 flex-1">
+          <div class="flex flex-wrap items-center gap-1.5">
+            <span class="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-semibold ${g.badge}">${g.icon} ${g.name}</span>
+            ${isToday ? '<span class="rounded-full bg-sky-600 px-2 py-0.5 text-[11px] font-bold uppercase tracking-wide text-white">Dnes</span>' : ''}
+            ${hol ? `<span class="rounded-full bg-rose-100 px-2 py-0.5 text-xs font-semibold text-rose-700">${esc(hol)}</span>` : ''}
+          </div>
+          <h3 class="day-title mt-1.5 break-words text-base font-bold leading-snug text-slate-900 sm:text-lg">${esc(d.title || TYPES[d.type].label)}</h3>
+          ${d.time ? `<p class="mt-1 flex items-start gap-1.5 text-sm font-medium text-slate-600">${svg(IC.clock, 'mt-0.5 h-4 w-4 shrink-0')}<span>${esc(d.time)}</span></p>` : ''}
+        </div>
+        <label class="-mr-1 -mt-1 flex shrink-0 cursor-pointer select-none flex-col items-center gap-1 rounded-xl px-2 py-1.5 text-[11px] font-semibold text-slate-600 transition hover:bg-black/5" title="Označiť ako hotové">
+          <input type="checkbox" data-action="done" data-date="${iso}" class="h-6 w-6 cursor-pointer accent-emerald-600" ${d.done ? 'checked' : ''}>
+          Hotovo
+        </label>
+      </div>
+      ${d.desc ? `<p class="desc mt-2.5 break-words text-sm leading-relaxed text-slate-700">${esc(d.desc)}</p>` : ''}
+      ${exHtml(iso, d)}
+      <div class="mt-3 flex flex-wrap gap-2">
+        <button type="button" data-action="edit" data-date="${iso}" class="${btn}">${svg(IC.pencil)}Upraviť</button>
+        <button type="button" data-action="swap" data-date="${iso}" class="${btn}">${svg(IC.swap)}Vymeniť / kopírovať</button>
+      </div>
+    </div>
+  </article>`;
+}
+
+function weekHtml(w) {
+  const wk = state.weeks[w];
+  let cards = '';
+  for (let i = 0; i < 7; i++) cards += cardHtml(DATES[w * 7 + i]);
+  return `
+  <section id="w-${w}" class="mb-10 scroll-mt-20">
+    <div class="mb-3 flex flex-wrap items-end justify-between gap-x-3 gap-y-2">
+      <h2 class="text-xl font-extrabold tracking-tight text-slate-900">Týždeň ${w + 1} <span class="ml-1 text-sm font-medium text-slate-500">${weekRange(w)}</span></h2>
+      <div class="flex flex-wrap items-center gap-1.5">
+        ${wk.tag ? `<span class="rounded-full bg-rose-100 px-2.5 py-1 text-xs font-semibold text-rose-700">${esc(wk.tag)}</span>` : ''}
+        <button type="button" data-action="week-note" data-week="${w}" class="inline-flex items-center gap-1.5 rounded-full bg-white px-2.5 py-1 text-xs font-medium text-slate-600 ring-1 ring-slate-200 hover:bg-slate-50" title="Upraviť poznámku k týždňu">${esc(wk.note || 'Pridať poznámku')} ${svg(IC.pencil, 'h-3 w-3')}</button>
+      </div>
+    </div>
+    <div class="space-y-3">${cards}</div>
+  </section>`;
+}
+
+function render() {
+  let body = '';
+  if (view.week === 'all') {
+    for (let w = 0; w < 7; w++) body += weekHtml(w);
+  } else {
+    const w = view.week;
+    const nb = 'inline-flex items-center gap-1.5 rounded-xl bg-white px-3.5 py-2.5 text-sm font-semibold text-slate-700 ring-1 ring-slate-200 hover:bg-slate-50';
+    body = weekHtml(w) + `
+      <div class="-mt-4 flex items-center justify-between gap-3">
+        ${w > 0 ? `<button type="button" data-action="week" data-week="${w - 1}" data-scroll="1" class="${nb}">${svg(IC.left)}Týždeň ${w}</button>` : '<span></span>'}
+        ${w < 6 ? `<button type="button" data-action="week" data-week="${w + 1}" data-scroll="1" class="${nb}">Týždeň ${w + 2}${svg(IC.right)}</button>` : ''}
+      </div>`;
+  }
+  app.innerHTML = headerHtml() + navHtml() + `<main class="mx-auto max-w-3xl lg:max-w-5xl px-4 pb-32 pt-5 sm:px-6">${body}</main>`;
+  const tabs = document.getElementById('tabs');
+  const act = tabs && tabs.querySelector('[data-tab-active]');
+  if (act) tabs.scrollLeft = act.offsetLeft - (tabs.clientWidth - act.offsetWidth) / 2;
+}
+
+/* =====================================================================
+   TOAST, MODÁLNE OKNÁ
+   ===================================================================== */
+function toast(msg, action, ms) {
+  const root = document.getElementById('toast-root');
+  const el = document.createElement('div');
+  el.className = 'toast-in pointer-events-auto flex w-full max-w-md items-center gap-3 rounded-2xl bg-slate-900 px-4 py-3 text-sm text-white shadow-xl';
+  el.innerHTML = `<span class="flex-1">${esc(msg)}</span>`;
+  if (action) {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'shrink-0 rounded-lg bg-white/15 px-3 py-1.5 font-semibold text-sky-200 hover:bg-white/25';
+    b.textContent = action.label;
+    b.onclick = () => { el.remove(); action.fn(); };
+    el.appendChild(b);
+  }
+  root.appendChild(el);
+  while (root.children.length > 2) root.firstElementChild.remove();
+  setTimeout(() => el.remove(), ms || (action ? 7000 : 3200));
+}
+
+function flashCard(iso) {
+  const el = document.getElementById('d-' + iso);
+  if (!el) return;
+  el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash');
+}
+
+let modal = null;
+const INP = 'w-full rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-base text-slate-900 shadow-sm placeholder:text-slate-400 focus:border-sky-500 focus:outline-none focus:ring-2 focus:ring-sky-200 sm:text-sm';
+const LBL = 'mb-1.5 block text-sm font-semibold text-slate-800';
+
+function openModal(inner) {
+  document.getElementById('modal-root').innerHTML = `
+  <div class="fixed inset-0 z-50 flex items-end justify-center sm:items-center sm:p-4" role="dialog" aria-modal="true">
+    <div class="fade-in absolute inset-0 bg-slate-900/50" data-action="close"></div>
+    <div class="sheet-in relative flex max-h-[92vh] w-full flex-col overflow-hidden rounded-t-3xl bg-white shadow-2xl sm:max-h-[88vh] sm:max-w-lg sm:rounded-3xl">${inner}</div>
+  </div>`;
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('modal-root').innerHTML = '';
+  document.body.style.overflow = '';
+  modal = null;
+}
+function modalHead(kicker, title, sub) {
+  return `
+    <div class="flex items-start justify-between gap-3 border-b border-slate-100 px-5 pb-3 pt-4">
+      <div class="min-w-0">
+        <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">${kicker}</p>
+        <h2 class="text-lg font-bold text-slate-900">${title}</h2>
+        ${sub ? `<p class="mt-0.5 truncate text-sm text-slate-500">${sub}</p>` : ''}
+      </div>
+      <button type="button" data-action="close" class="-mr-2 rounded-full p-2 text-slate-500 hover:bg-slate-100" aria-label="Zavrieť">${svg(IC.x, 'h-5 w-5')}</button>
+    </div>`;
+}
+
+/* ---------- Úprava dňa ---------- */
+function openEdit(iso, focus) {
+  const d = state.days[iso];
+  modal = { kind: 'edit', iso, origType: d.type, origTitle: d.title, titleTouched: false, draft: { type: d.type, time: d.time, title: d.title, desc: d.desc, ex: clone(d.ex) } };
+  if (!modal.draft.ex.length && TPL[d.type]) modal.draft.ex = clone(TPL[d.type].ex);
+  openModal(modalHead('Upraviť deň', esc(fmtLong(iso))) + `
+    <form id="edit-form" class="flex-1 space-y-5 overflow-y-auto px-5 py-4" autocomplete="off">
+      <fieldset>
+        <legend class="${LBL}">Typ tréningu / kategória</legend>
+        <div id="type-grid" class="grid grid-cols-2 gap-2"></div>
+      </fieldset>
+      <label class="block"><span class="${LBL}">Čas tréningu</span>
+        <input name="time" list="time-options" value="${esc(d.time)}" placeholder="napr. 17:00, Poobede…" class="${INP}">
+      </label>
+      <label class="block"><span class="${LBL}">Názov tréningu</span>
+        <input name="title" value="${esc(d.title)}" placeholder="napr. Beh – Zóna 2 (8,0 km)" class="${INP}">
+      </label>
+      <label class="block"><span class="${LBL}">Podrobný popis (rozpis)</span>
+        <textarea name="desc" rows="5" placeholder="Čo presne ťa v tento deň čaká…" class="${INP} leading-relaxed">${esc(d.desc)}</textarea>
+      </label>
+      <section id="ex-section" class="scroll-mt-4">
+        <div class="mb-2 flex items-center justify-between gap-2">
+          <h3 class="text-sm font-semibold text-slate-800">Cviky</h3>
+          <button type="button" data-action="ex-template" class="inline-flex items-center gap-1 rounded-lg px-2 py-1 text-xs font-semibold text-sky-700 hover:bg-sky-50"></button>
+        </div>
+        <div id="ex-list" class="space-y-2"></div>
+        <button type="button" data-action="ex-add" class="mt-2 inline-flex w-full items-center justify-center gap-1.5 rounded-xl border-2 border-dashed border-slate-300 px-3 py-2.5 text-sm font-semibold text-slate-600 hover:border-slate-400 hover:bg-slate-50">${svg(IC.plus)}Pridať cvik</button>
+        <label id="ex-apply-wrap" class="mt-3 flex cursor-pointer items-start gap-2.5 rounded-xl bg-slate-50 p-3 text-sm text-slate-700 ring-1 ring-slate-200">
+          <input type="checkbox" name="applyAll" class="mt-0.5 h-5 w-5 shrink-0 accent-sky-600">
+          <span>Použiť tento zoznam cvikov aj pre všetky <b>ďalšie</b> dni typu <b id="ex-apply-type"></b></span>
+        </label>
+      </section>
+    </form>
+    <div class="safe-bottom flex gap-2 border-t border-slate-100 px-5 pt-3">
+      <button type="button" data-action="close" class="flex-1 rounded-xl bg-slate-100 px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-200">Zrušiť</button>
+      <button type="submit" form="edit-form" class="flex-[2] rounded-xl bg-slate-900 px-4 py-3 text-sm font-semibold text-white shadow hover:bg-slate-800">Uložiť zmeny</button>
+    </div>`);
+  renderTypeGrid(); renderExList(); syncExSection();
+  if (focus === 'ex') document.getElementById('ex-section').scrollIntoView({ block: 'start' });
+}
+
+function renderTypeGrid() {
+  document.getElementById('type-grid').innerHTML = Object.keys(TYPES).map(k => {
+    const g = GROUPS[TYPES[k].group], sel = modal.draft.type === k;
+    return `<button type="button" data-action="pick-type" data-type="${k}" aria-pressed="${sel}"
+      class="flex min-h-[2.75rem] items-center gap-2 rounded-xl border px-3 py-2 text-left text-sm font-semibold leading-tight transition ${sel ? g.sel + ' text-slate-900' : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-50'}">
+      <span class="h-3 w-3 shrink-0 rounded-full ${g.dot}"></span><span class="min-w-0">${esc(TYPES[k].label)}</span></button>`;
+  }).join('');
+}
+
+function renderExList() {
+  const ex = modal.draft.ex;
+  const inp = 'rounded-lg border border-slate-300 bg-white px-2.5 py-2 text-base focus:border-sky-500 focus:outline-none focus:ring-2 focus:ring-sky-200 sm:text-sm';
+  const ib = 'flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-200/70 disabled:opacity-30';
+  document.getElementById('ex-list').innerHTML = ex.length ? ex.map((e, i) => `
+    <div class="rounded-xl border border-slate-200 bg-slate-50/70 p-2.5">
+      <div class="flex items-center gap-1.5">
+        <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-900 text-xs font-bold text-white">${i + 1}</span>
+        <input data-ex="n" data-i="${i}" value="${esc(e.n)}" placeholder="Názov cviku" aria-label="Názov cviku ${i + 1}" class="${inp} min-w-0 flex-1 font-semibold">
+        <button type="button" data-action="ex-up" data-i="${i}" class="${ib}" ${i === 0 ? 'disabled' : ''} aria-label="Posunúť vyššie">${svg(IC.up)}</button>
+        <button type="button" data-action="ex-del" data-i="${i}" class="${ib} hover:text-red-600" aria-label="Odstrániť cvik">${svg(IC.trash)}</button>
+      </div>
+      <input data-ex="d" data-i="${i}" value="${esc(e.d)}" placeholder="Série × opakovania, poznámka" aria-label="Série a opakovania – cvik ${i + 1}" class="${inp} mt-2 w-full">
+    </div>`).join('') : '<p class="rounded-xl bg-slate-50 px-3 py-3 text-sm text-slate-500">Zatiaľ žiadne cviky.</p>';
+}
+
+function syncExSection() {
+  const t = modal.draft.type;
+  document.getElementById('ex-section').classList.toggle('hidden', !usesExercises(t));
+  document.getElementById('ex-apply-wrap').classList.toggle('hidden', !isGym(t));
+  document.getElementById('ex-apply-type').textContent = TYPES[t].label;
+  const tb = document.querySelector('[data-action="ex-template"]');
+  tb.classList.toggle('hidden', !TPL[t]);
+  if (TPL[t]) tb.innerHTML = svg(IC.reset, 'h-3.5 w-3.5') + 'Načítať šablónu ' + esc(TPL[t].name.split(' – ')[0]);
+}
+
+function pickType(k) {
+  const dr = modal.draft, old = dr.type;
+  if (k === old) return;
+  // názov sa prispôsobí novej kategórii, kým ho v tomto okne ručne neprepíšeš
+  if (!modal.titleTouched || !dr.title.trim() || dr.title === TYPES[old].label) {
+    dr.title = k === modal.origType ? modal.origTitle : TYPES[k].label;
+    document.querySelector('#edit-form [name="title"]').value = dr.title;
+  }
+  const exIsOldTpl = TPL[old] && JSON.stringify(dr.ex) === JSON.stringify(TPL[old].ex);
+  if (TPL[k] && (!dr.ex.length || exIsOldTpl || !usesExercises(old))) dr.ex = clone(TPL[k].ex);
+  dr.type = k;
+  renderTypeGrid(); renderExList(); syncExSection();
+}
+
+function saveEdit() {
+  const { iso, draft } = modal;
+  const f = document.getElementById('edit-form');
+  const applyBox = f.elements.namedItem('applyAll');
+  const applyAll = !!(applyBox && applyBox.checked);
+  snapshot();
+  const ex = usesExercises(draft.type) ? draft.ex.map(e => ({ n: e.n.trim(), d: e.d.trim() })).filter(e => e.n || e.d) : [];
+  Object.assign(state.days[iso], { type: draft.type, time: draft.time.trim(), title: draft.title.trim(), desc: draft.desc.trim(), ex });
+  touch(iso);
+  let n = 0;
+  if (applyAll && isGym(draft.type)) {
+    DATES.forEach(x => { if (x > iso && state.days[x].type === draft.type) { state.days[x].ex = clone(ex); touch(x); n++; } });
+  }
+  persist(); closeModal(); render(); flashCard(iso);
+  toast(n ? `Uložené. Zoznam cvikov sa zmenil aj v ${n} ďalších dňoch.` : 'Zmeny boli uložené.', { label: 'Späť', fn: undo });
+}
+
+/* ---------- Výmena / kopírovanie dní ---------- */
+function swapRowsHtml() {
+  let h = '';
+  for (let w = 0; w < 7; w++) {
+    h += `<h4 class="sticky top-0 z-10 bg-white/95 px-1 pb-1.5 pt-3 text-xs font-bold uppercase tracking-wider text-slate-500">Týždeň ${w + 1} · ${weekRange(w)}</h4>`;
+    for (let i = 0; i < 7; i++) {
+      const x = DATES[w * 7 + i], d = state.days[x], g = groupOf(d.type);
+      const isSrc = x === modal.iso, sel = x === modal.target;
+      h += `<button type="button" data-action="pick-target" data-date="${x}" ${isSrc ? 'disabled' : ''}
+        class="mb-1.5 flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left transition ${isSrc ? 'cursor-default bg-slate-100 opacity-70' : sel ? 'bg-sky-50 ring-2 ring-sky-500' : 'bg-white ring-1 ring-slate-200 hover:bg-slate-50'}">
+        <span class="h-3 w-3 shrink-0 rounded-full ${g.dot}"></span>
+        <span class="w-[4.6rem] shrink-0 text-sm font-semibold text-slate-800">${DAY_SHORT[dow(x)]} ${fmtShort(x)}</span>
+        <span class="min-w-0 flex-1 truncate text-sm text-slate-600">${esc(d.title || TYPES[d.type].label)}</span>
+        ${isSrc ? '<span class="shrink-0 rounded-full bg-slate-900 px-2 py-0.5 text-[11px] font-bold text-white">tento deň</span>' : ''}
+        ${sel ? '<span class="shrink-0 rounded-full bg-sky-600 px-2 py-0.5 text-[11px] font-bold text-white">cieľ</span>' : ''}
+      </button>`;
+    }
+  }
+  return h;
+}
+
+function openSwap(iso) {
+  modal = { kind: 'swap', iso, target: null };
+  const d = state.days[iso];
+  openModal(modalHead('Vymeniť alebo skopírovať', esc(fmtLong(iso)), esc(d.title || TYPES[d.type].label)) + `
+    <p class="px-5 pt-3 text-sm text-slate-600">Vyber deň, s ktorým chceš tréning <b>vymeniť</b>, alebo do ktorého ho chceš <b>skopírovať</b>.</p>
+    <div id="swap-list" class="relative flex-1 overflow-y-auto px-5 pb-3">${swapRowsHtml()}</div>
+    <div class="safe-bottom border-t border-slate-100 px-5 pt-3">
+      <p id="swap-sel" class="mb-2 text-xs text-slate-500">Zatiaľ nie je vybraný žiadny deň.</p>
+      <div class="flex gap-2">
+        <button type="button" data-action="do-swap" disabled class="inline-flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-slate-900 px-3 py-3 text-sm font-semibold text-white shadow hover:bg-slate-800 disabled:opacity-40">${svg(IC.swap)}Vymeniť dni</button>
+        <button type="button" data-action="do-copy" disabled class="inline-flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-white px-3 py-3 text-sm font-semibold text-slate-800 ring-1 ring-slate-300 hover:bg-slate-50 disabled:opacity-40">${svg(IC.copy)}Skopírovať sem</button>
+      </div>
+    </div>`);
+  const list = document.getElementById('swap-list');
+  const src = list.querySelector(`[data-date="${iso}"]`);
+  if (src) list.scrollTop = Math.max(0, src.offsetTop - list.clientHeight / 2);
+}
+
+function pickTarget(x) {
+  modal.target = x;
+  const list = document.getElementById('swap-list'), top = list.scrollTop;
+  list.innerHTML = swapRowsHtml();
+  list.scrollTop = top;
+  document.querySelectorAll('[data-action="do-swap"],[data-action="do-copy"]').forEach(b => { b.disabled = false; });
+  document.getElementById('swap-sel').innerHTML = `Cieľ: <b class="text-slate-800">${esc(fmtLong(x))}</b> · kopírovanie prepíše tréning v cieľovom dni.`;
+}
+
+function doSwap(copy) {
+  const { iso, target } = modal;
+  if (!target) return;
+  snapshot();
+  if (copy) state.days[target] = Object.assign(clone(state.days[iso]), { done: false });
+  else { const a = state.days[iso]; state.days[iso] = state.days[target]; state.days[target] = a; touch(iso); }
+  touch(target);
+  persist(); closeModal(); render(); flashCard(iso); flashCard(target);
+  const lab = x => DAY_SHORT[dow(x)] + ' ' + fmtShort(x);
+  toast(copy ? `Tréning skopírovaný do dňa ${lab(target)}` : `Vymenené: ${lab(iso)} ⇄ ${lab(target)}`, { label: 'Späť', fn: undo });
+}
+
+/* =====================================================================
+   SYNCHRONIZÁCIA S GITHUBOM
+   Plán sa ukladá do súboru plan.json vo vetve "data" tvojho repozitára.
+   Čítanie funguje bez prihlásenia, zápis potrebuje prístupový token,
+   ktorý sa ukladá iba v prehliadači daného zariadenia.
+   ===================================================================== */
+const GH_REPO = { owner: 'martin-culak', repo: 'treningovy-plan' };
+const GH_TOKEN_KEY = 'treningovy-plan-gh-token';
+const GH = (() => {
+  const c = { owner: '', repo: '', branch: 'data', path: 'plan.json' };
+  const m = location.hostname.match(/^([a-z0-9-]+)\.github\.io$/i);
+  if (m) {
+    c.owner = m[1];
+    const seg = location.pathname.split('/').filter(Boolean)[0];
+    c.repo = seg && !/\.html?$/i.test(seg) ? seg : m[1] + '.github.io';
+  } else if (!/^__/.test(GH_REPO.owner)) {
+    c.owner = GH_REPO.owner; c.repo = GH_REPO.repo;
+  }
+  return c;
+})();
+
+const sync = { status: 'idle', detail: '', sha: null, busy: false, again: false, timer: null, lastPull: 0, lastOk: 0 };
+
+function ghToken() { try { return localStorage.getItem(GH_TOKEN_KEY) || ''; } catch (e) { return ''; } }
+
+function b64enc(str) {
+  const bytes = new TextEncoder().encode(str);
+  let bin = '';
+  for (let i = 0; i < bytes.length; i += 0x8000) bin += String.fromCharCode.apply(null, bytes.subarray(i, i + 0x8000));
+  return btoa(bin);
+}
+function b64dec(b64) {
+  return new TextDecoder().decode(Uint8Array.from(atob(String(b64).replace(/\s/g, '')), c => c.charCodeAt(0)));
+}
+
+function syncPillInner() {
+  const t = sync.lastOk ? new Date(sync.lastOk).toLocaleTimeString('sk-SK', { hour: '2-digit', minute: '2-digit' }) : '';
+  const map = {
+    off: ['bg-slate-400', 'Synchronizácia s GitHubom nie je nastavená'],
+    idle: ['bg-slate-400', 'GitHub: pripájam…'],
+    readonly: ['bg-amber-400', 'GitHub: len čítanie – klikni a pridaj token'],
+    busy: ['bg-sky-400 animate-pulse', 'GitHub: synchronizujem…'],
+    pending: ['bg-sky-400 animate-pulse', 'GitHub: odosielam zmeny…'],
+    ok: ['bg-emerald-400', 'Uložené na GitHube' + (t ? ' · ' + t : '')],
+    offline: ['bg-amber-400', 'Bez pripojenia – zmeny odošlem neskôr'],
+    token: ['bg-red-500', 'GitHub: neplatný token alebo chýbajú práva'],
+    error: ['bg-red-500', 'GitHub: chyba synchronizácie' + (sync.detail ? ' (' + sync.detail + ')' : '')]
+  };
+  const [dot, text] = map[GH.owner ? sync.status : 'off'] || map.idle;
+  return `<span class="h-2 w-2 shrink-0 rounded-full ${dot}"></span><span class="truncate">${esc(text)}</span>`;
+}
+
+function setSyncStatus(st, detail) {
+  sync.status = st;
+  sync.detail = detail || '';
+  if (st === 'ok') sync.lastOk = Date.now();
+  ['sync-pill', 'sync-status-text'].forEach(id => { const el = document.getElementById(id); if (el) el.innerHTML = syncPillInner(); });
+}
+
+/* volá sa pri každej lokálnej zmene (persist) */
+function onLocalChange() {
+  if (!GH.owner || !ghToken()) return;
+  setSyncStatus('pending');
+  clearTimeout(sync.timer);
+  sync.timer = setTimeout(syncNow, 1500);
+}
+
+function pullIfStale(ms) { if (GH.owner && !sync.busy && Date.now() - sync.lastPull > ms) syncNow(); }
+
+async function ghApi(method, path, body) {
+  const headers = { Accept: 'application/vnd.github+json' };
+  const tok = ghToken();
+  if (tok) headers.Authorization = 'Bearer ' + tok;
+  if (body) headers['Content-Type'] = 'application/json';
+  const res = await fetch('https://api.github.com' + path, { method, headers, body: body ? JSON.stringify(body) : undefined, cache: 'no-store' });
+  let data = null;
+  try { data = await res.json(); } catch (e) { /* bez tela */ }
+  return { status: res.status, ok: res.ok, data };
+}
+
+/* zlúčenie: pri každom dni (a týždni) vyhráva novšia zmena */
+function mergeStates(local, remote) {
+  const out = clone(local);
+  DATES.forEach(iso => { if ((+remote.days[iso].u || 0) > (+local.days[iso].u || 0)) out.days[iso] = clone(remote.days[iso]); });
+  for (let w = 0; w < 7; w++) if ((+remote.weeks[w].u || 0) > (+local.weeks[w].u || 0)) out.weeks[w] = clone(remote.weeks[w]);
+  out.updatedAt = Math.max(+local.updatedAt || 0, +remote.updatedAt || 0);
+  return out;
+}
+const dataKey = s => JSON.stringify([s.days, s.weeks]);
+
+async function createBranch(base) {
+  const repo = await ghApi('GET', base);
+  const def = repo.ok && repo.data.default_branch ? repo.data.default_branch : 'main';
+  const ref = await ghApi('GET', `${base}/git/ref/heads/${encodeURIComponent(def)}`);
+  if (ref.ok) await ghApi('POST', `${base}/git/refs`, { ref: 'refs/heads/' + GH.branch, sha: ref.data.object.sha });
+}
+
+async function syncNow() {
+  if (!GH.owner) return;
+  if (sync.busy) { sync.again = true; return; }
+  sync.busy = true;
+  clearTimeout(sync.timer);
+  sync.lastPull = Date.now();
+  setSyncStatus('busy');
+  const base = `/repos/${GH.owner}/${GH.repo}`;
+  const file = `${base}/contents/${GH.path}`;
+  try {
+    for (let attempt = 0; attempt < 3; attempt++) {
+      const r = await ghApi('GET', `${file}?ref=${encodeURIComponent(GH.branch)}`);
+      if (r.status === 401) throw new Error('token');
+      if (r.status === 403) throw new Error(ghToken() ? 'token' : 'limit');
+      if (!r.ok && r.status !== 404) throw new Error('HTTP ' + r.status);
+      let remote = null;
+      sync.sha = null;
+      if (r.ok) { sync.sha = r.data.sha; remote = normalize(JSON.parse(b64dec(r.data.content))); }
+      if (remote) {
+        const merged = mergeStates(state, remote);
+        if (dataKey(merged) !== dataKey(state)) { state = merged; saveLocal(); render(); }
+      }
+      if (!ghToken()) { setSyncStatus(remote ? 'readonly' : 'error', remote ? '' : 'plan.json sa nenašiel'); return; }
+      if (remote && dataKey(remote) === dataKey(state)) { setSyncStatus('ok'); return; }
+      const body = { message: 'Plán upravený ' + new Date().toLocaleString('sk-SK'), content: b64enc(JSON.stringify(state)), branch: GH.branch };
+      if (sync.sha) body.sha = sync.sha;
+      let p = await ghApi('PUT', file, body);
+      if (!p.ok && !remote && (p.status === 404 || p.status === 422)) { await createBranch(base); p = await ghApi('PUT', file, body); }
+      if (p.ok) { sync.sha = p.data && p.data.content ? p.data.content.sha : null; setSyncStatus('ok'); return; }
+      if (p.status === 401 || p.status === 403) throw new Error('token');
+      if (p.status !== 409 && p.status !== 422) throw new Error('HTTP ' + p.status);
+      /* 409/422: medzitým uložilo zmenu iné zariadenie → stiahni, zlúč a skús znova */
+    }
+    throw new Error('konflikt');
+  } catch (e) {
+    const msg = String((e && e.message) || e);
+    if (msg === 'token') setSyncStatus('token');
+    else if (navigator.onLine === false || e instanceof TypeError) setSyncStatus('offline');
+    else setSyncStatus('error', msg === 'limit' ? 'príliš veľa požiadaviek, skús neskôr' : msg);
+  } finally {
+    sync.busy = false;
+    if (sync.again) { sync.again = false; sync.timer = setTimeout(syncNow, 500); }
+  }
+}
+
+/* ---------- Okno „Synchronizácia“ ---------- */
+function openSyncSettings() {
+  modal = { kind: 'sync' };
+  const tok = ghToken();
+  const repoUrl = `https://github.com/${GH.owner}/${GH.repo}`;
+  const sb = 'inline-flex items-center justify-center gap-1.5 rounded-xl px-3.5 py-2.5 text-sm font-semibold transition';
+  openModal(modalHead('Synchronizácia', 'Prepojenie s GitHubom') + `
+    <div class="flex-1 space-y-4 overflow-y-auto px-5 py-4 text-sm leading-relaxed text-slate-700">
+      <div class="rounded-xl bg-slate-50 p-3 ring-1 ring-slate-200">
+        <p id="sync-status-text" class="flex items-center gap-2 font-semibold text-slate-800">${syncPillInner()}</p>
+        ${GH.owner
+          ? `<p class="mt-1 text-xs text-slate-500">Repozitár <a class="font-semibold text-sky-700 underline" href="${repoUrl}" target="_blank" rel="noopener">${esc(GH.owner + '/' + GH.repo)}</a> · súbor <code>${esc(GH.path)}</code> vo vetve <code>${esc(GH.branch)}</code></p>`
+          : '<p class="mt-1 text-xs text-slate-500">Synchronizácia funguje, keď plán otvoríš z adresy GitHub Pages.</p>'}
+      </div>
+      ${tok ? `
+      <p>V tomto zariadení je uložený prístupový token (končí na <b>…${esc(tok.slice(-4))}</b>). Každá zmena sa automaticky odošle na GitHub a pri otvorení plánu sa načítajú zmeny z ostatných zariadení.</p>
+      <div class="flex flex-wrap gap-2">
+        <button type="button" data-action="sync-now" class="${sb} bg-slate-900 text-white hover:bg-slate-800">${svg(IC.reset)}Synchronizovať teraz</button>
+        <button type="button" data-action="sync-clear-token" class="${sb} bg-white text-slate-700 ring-1 ring-slate-300 hover:bg-slate-50">${svg(IC.trash)}Odstrániť token</button>
+      </div>` : `
+      <p>Aby sa zmeny z <b>tohto zariadenia</b> ukladali na GitHub, vlož sem svoj prístupový token. Bez neho plán z GitHubu iba čítaš.</p>
+      <label class="block"><span class="${LBL}">Prístupový token (fine-grained)</span>
+        <input id="gh-token" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="github_pat_…" class="${INP}">
+      </label>
+      <button type="button" data-action="sync-save-token" class="${sb} w-full bg-slate-900 py-3 text-white hover:bg-slate-800">Uložiť token a synchronizovať</button>`}
+      <details class="rounded-xl ring-1 ring-slate-200">
+        <summary class="px-3 py-2.5 font-semibold text-slate-800">Ako získam token?</summary>
+        <ol class="list-decimal space-y-1.5 pb-3 pl-8 pr-3 text-slate-600">
+          <li>Otvor <a class="font-semibold text-sky-700 underline" href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">GitHub → Fine-grained token → Generate new token</a>.</li>
+          <li>Názov napr. „Tréningový plán – mobil“, platnosť (Expiration) 90 dní.</li>
+          <li>Repository access: <b>Only select repositories</b> → <b>${esc(GH.repo || 'treningovy-plan')}</b>.</li>
+          <li>Permissions → Repository permissions → <b>Contents: Read and write</b>.</li>
+          <li>Klikni Generate token, skopíruj ho a vlož sem.</li>
+        </ol>
+      </details>
+      <p class="text-xs text-slate-500">Token sa ukladá iba v tomto prehliadači a posiela sa iba na api.github.com. Nevkladaj ho nikam inam a nikomu ho neposielaj.</p>
+    </div>`);
+}
+
+function saveToken() {
+  const inp = document.getElementById('gh-token');
+  const v = ((inp && inp.value) || '').trim();
+  if (!/^(github_pat_|ghp_)[A-Za-z0-9_]{20,}$/.test(v)) { toast('Toto nevyzerá ako GitHub token (začína na „github_pat_“).'); return; }
+  try { localStorage.setItem(GH_TOKEN_KEY, v); } catch (e) { toast('Token sa v tomto prehliadači nepodarilo uložiť.'); return; }
+  closeModal();
+  toast('Token uložený, synchronizujem s GitHubom…');
+  syncNow();
+}
+
+function clearToken() {
+  if (!window.confirm('Odstrániť token z tohto zariadenia? Zmeny sa potom nebudú odosielať na GitHub.')) return;
+  try { localStorage.removeItem(GH_TOKEN_KEY); } catch (e) { /* nič */ }
+  closeModal();
+  syncNow();
+}
+
+/* =====================================================================
+   AKCIE: Dnes, týždne, poznámky, uloženie .html, obnovenie
+   ===================================================================== */
+function goToday() {
+  const t = todayIso();
+  let target = t, msg = '';
+  if (t < START) { target = START; msg = 'Plán začína v pondelok 16. 11. 2026.'; }
+  else if (t > END) { target = END; msg = 'Plán sa skončil v nedeľu 3. 1. 2027.'; }
+  if (view.week !== 'all') view.week = weekOf(target);
+  render();
+  const el = document.getElementById('d-' + target);
+  if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); flashCard(target); }
+  if (msg) toast(msg);
+}
+
+function setWeek(key, scroll) {
+  const prev = view.week;
+  view.week = key === 'all' ? 'all' : +key;
+  render();
+  const sec = document.getElementById('w-' + (view.week === 'all' ? (prev === 'all' ? 0 : prev) : view.week));
+  if (sec && (scroll || window.scrollY > sec.offsetTop - 80)) sec.scrollIntoView({ block: 'start' });
+}
+
+function editWeekNote(w) {
+  const v = window.prompt('Poznámka k týždňu ' + (w + 1) + ' (' + weekRange(w) + '):', state.weeks[w].note || '');
+  if (v === null) return;
+  snapshot();
+  state.weeks[w].note = v.trim();
+  state.weeks[w].u = Date.now();
+  persist(); render();
+}
+
+function toggleDone(input) {
+  const iso = input.dataset.date;
+  state.days[iso].done = input.checked;
+  touch(iso);
+  persist();
+  const card = document.getElementById('d-' + iso);
+  if (card) card.classList.toggle('is-done', input.checked);
+}
+
+function buildHtmlFile() {
+  const doc = document.documentElement.cloneNode(true);
+  ['head', 'body'].forEach(tag => {
+    const el = doc.querySelector(tag);
+    Array.from(el.children).forEach(ch => { if (!ch.hasAttribute('data-keep')) ch.remove(); });
+  });
+  doc.querySelectorAll('[data-clear]').forEach(el => { el.innerHTML = ''; });
+  doc.querySelector('body').removeAttribute('style');
+  if (!state.updatedAt) persist();
+  doc.querySelector('#plan-data').textContent = JSON.stringify(state).replace(/</g, '\\u003c');
+  return '<!DOCTYPE html>\n' + doc.outerHTML + '\n';
+}
+
+function saveHtml() {
+  const blob = new Blob([buildHtmlFile()], { type: 'text/html;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'index.html';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 5000);
+  toast('Stiahnutý súbor index.html so všetkými tvojimi úpravami.');
+}
+
+function resetPlan() {
+  if (!window.confirm('Obnoviť pôvodný plán?\n\nVšetky úpravy aj odškrtnutia sa vrátia do pôvodného stavu.')) return;
+  snapshot();
+  replaceState(buildDefault());
+  openEx.clear();
+  render();
+  toast('Pôvodný plán bol obnovený.', { label: 'Späť', fn: undo });
+}
+
+/* =====================================================================
+   UDALOSTI
+   ===================================================================== */
+document.addEventListener('click', e => {
+  const el = e.target.closest('[data-action]');
+  if (!el || el.disabled) return;
+  const a = el.dataset.action;
+  if (a === 'done') return; // rieši 'change'
+  const dr = modal && modal.draft;
+  switch (a) {
+    case 'week': setWeek(el.dataset.week, !!el.dataset.scroll); break;
+    case 'today': goToday(); break;
+    case 'edit': openEdit(el.dataset.date, el.dataset.focus); break;
+    case 'swap': openSwap(el.dataset.date); break;
+    case 'week-note': editWeekNote(+el.dataset.week); break;
+    case 'save-html': saveHtml(); break;
+    case 'reset': resetPlan(); break;
+    case 'close': closeModal(); break;
+    case 'pick-type': pickType(el.dataset.type); break;
+    case 'ex-add': {
+      dr.ex.push({ n: '', d: '' }); renderExList();
+      const ins = document.querySelectorAll('#ex-list [data-ex="n"]');
+      if (ins.length) ins[ins.length - 1].focus();
+      break;
+    }
+    case 'ex-del': dr.ex.splice(+el.dataset.i, 1); renderExList(); break;
+    case 'ex-up': {
+      const i = +el.dataset.i;
+      if (i > 0) { const t = dr.ex[i - 1]; dr.ex[i - 1] = dr.ex[i]; dr.ex[i] = t; renderExList(); }
+      break;
+    }
+    case 'ex-template': {
+      const tpl = TPL[dr.type];
+      if (!tpl) break;
+      const differs = dr.ex.length && JSON.stringify(dr.ex) !== JSON.stringify(tpl.ex);
+      if (differs && !window.confirm('Nahradiť aktuálny zoznam cvikov pôvodnou šablónou?')) break;
+      dr.ex = clone(tpl.ex); renderExList();
+      break;
+    }
+    case 'pick-target': pickTarget(el.dataset.date); break;
+    case 'do-swap': doSwap(false); break;
+    case 'do-copy': doSwap(true); break;
+    case 'sync-settings': openSyncSettings(); break;
+    case 'sync-now': syncNow(); break;
+    case 'sync-save-token': saveToken(); break;
+    case 'sync-clear-token': clearToken(); break;
+  }
+});
+
+document.addEventListener('change', e => {
+  if (e.target.matches('input[data-action="done"]')) toggleDone(e.target);
+});
+
+document.addEventListener('input', e => {
+  if (!modal || modal.kind !== 'edit') return;
+  const t = e.target;
+  if (t.dataset.ex) { const row = modal.draft.ex[+t.dataset.i]; if (row) row[t.dataset.ex] = t.value; }
+  else if (t.name && Object.prototype.hasOwnProperty.call(modal.draft, t.name)) {
+    modal.draft[t.name] = t.value;
+    if (t.name === 'title') modal.titleTouched = true;
+  }
+});
+
+document.addEventListener('submit', e => {
+  if (e.target.id === 'edit-form') { e.preventDefault(); saveEdit(); }
+});
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal) closeModal(); });
+
+app.addEventListener('toggle', e => {
+  const t = e.target;
+  if (t.matches && t.matches('details.ex-details')) { if (t.open) openEx.add(t.dataset.date); else openEx.delete(t.dataset.date); }
+}, true);
+
+window.addEventListener('storage', e => {
+  if (e.key !== STORAGE_KEY || !e.newValue) return;
+  try { state = normalize(JSON.parse(e.newValue)); if (!modal) render(); } catch (err) { /* ignoruj */ }
+});
+
+let lastToday = todayIso();
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) return;
+  if (lastToday !== todayIso()) { lastToday = todayIso(); if (!modal) render(); }
+  pullIfStale(10000);
+});
+window.addEventListener('focus', () => pullIfStale(10000));
+window.addEventListener('online', () => syncNow());
+setInterval(() => { if (!document.hidden && ghToken()) pullIfStale(60000); }, 90000);
+
+/* =====================================================================
+   ŠTART
+   ===================================================================== */
+const t0 = todayIso();
+view.week = t0 < START ? 0 : t0 > END ? 6 : weekOf(t0);
+render();
+if (conflict && !GH.owner) {
+  toast('V tomto prehliadači máš novšie zmeny než v tomto súbore – zobrazujem tie novšie.', {
+    label: 'Použiť verziu zo súboru',
+    fn: () => { snapshot(); replaceState(normalize(bakedState)); render(); }
+  }, 15000);
+}
+syncNow();
+})();
+</script>
+</body>
+</html>
