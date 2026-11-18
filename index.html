@@ -801,7 +801,8 @@ async function syncNow() {
   const file = `${base}/contents/${GH.path}`;
   try {
     for (let attempt = 0; attempt < 3; attempt++) {
-      const r = await ghApi('GET', `${file}?ref=${encodeURIComponent(GH.branch)}`);
+      /* parameter t obchádza vyrovnávaciu pamäť GitHubu (inak môžu byť dáta bez tokenu až minútu staré) */
+      const r = await ghApi('GET', `${file}?ref=${encodeURIComponent(GH.branch)}&t=${Date.now()}`);
       if (r.status === 401) throw new Error('token');
       if (r.status === 403) throw new Error(ghToken() ? 'token' : 'limit');
       if (!r.ok && r.status !== 404) throw new Error('HTTP ' + r.status);
